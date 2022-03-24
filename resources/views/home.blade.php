@@ -10,7 +10,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> NAF STORE</strong></h1>
                         <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
-                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
                 </div>
             </div>
@@ -20,9 +20,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                        <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        <h1 class="m-b-20"><strong>Welcome To <br> NAF STORE</strong></h1>
+                        <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
+                        <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
                 </div>
             </div>
@@ -32,9 +32,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                        <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                        <h1 class="m-b-20"><strong>Welcome To <br> NAF STORE</strong></h1>
+                        <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
+                        <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
                 </div>
             </div>
@@ -53,20 +53,20 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
-                    <img class="img-fluid" src="Assets/images/categories_img_01.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                    <img class="img-fluid" src="Assets/images/banner-01.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Chips</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
-                    <img class="img-fluid" src="Assets/images/categories_img_02.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                    <img class="img-fluid" src="Assets/images/banner-02.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Snack</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
-                    <img class="img-fluid" src="Assets/images/categories_img_03.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                    <img class="img-fluid" src="Assets/images/banner-03.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Beverage</a>
                 </div>
             </div>
         </div>

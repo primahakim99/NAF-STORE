@@ -147,18 +147,18 @@
                             </div>
                             <div class="rounded p-2 bg-light">
                                 <div class="media mb-2 border-bottom">
-                                    <div class="media-body"> <a href="detail.html"> Lorem ipsum dolor sit amet</a>
-                                        <div class="medium">Price: $80.00 <span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: $80.00</div>
+                                    <div class="media-body"> <a href="detail.html">Apple Chips</a>
+                                        <div class="medium">Rp 31.500<span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: Rp 31.500</div>
                                     </div>
                                 </div>
                                 <div class="media mb-2 border-bottom">
-                                    <div class="media-body"> <a href="detail.html"> Lorem ipsum dolor sit amet</a>
-                                        <div class="medium">Price: $60.00 <span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: $60.00</div>
+                                    <div class="media-body"> <a href="detail.html">Bakpao Sayang</a>
+                                        <div class="medium">Price: Rp 30.000<span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: Rp 30.000</div>
                                     </div>
                                 </div>
                                 <div class="media mb-2">
-                                    <div class="media-body"> <a href="detail.html"> Lorem ipsum dolor sit amet</a>
-                                        <div class="medium">Price: $40.00 <span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: $40.00</div>
+                                    <div class="media-body"> <a href="detail.html">Bayam Crispy</a>
+                                        <div class="medium">Price: Rp 8.700<span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: Rp 8.700</div>
                                     </div>
                                 </div>
                             </div>
@@ -171,21 +171,21 @@
                             </div>
                             <div class="d-flex">
                                 <h4>Sub Total</h4>
-                                <div class="ml-auto font-weight-bold"> $ 440 </div>
+                                <div class="ml-auto font-weight-bold">Rp 70.200</div>
                             </div>
                             <div class="d-flex">
                                 <h4>Discount</h4>
-                                <div class="ml-auto font-weight-bold"> $ 40 </div>
+                                <div class="ml-auto font-weight-bold">Rp 0</div>
                             </div>
                             <hr>
                             <div class="d-flex">
                                 <h4>Shipping Cost</h4>
-                                <div class="ml-auto font-weight-bold"> Free </div>
+                                <div class="ml-auto font-weight-bold">Rp 10.000</div>
                             </div>
                             <hr>
                             <div class="d-flex gr-total">
                                 <h5>Grand Total</h5>
-                                <div class="ml-auto h5"> $ 388 </div>
+                                <div class="ml-auto h5">Rp 70.200</div>
                             </div>
                             <hr>
                         </div>

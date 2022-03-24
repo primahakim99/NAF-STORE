@@ -25,7 +25,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Images</th>
+                                <th></th>
                                 <th>Product Name</th>
                                 <th>Unit Price </th>
                                 <th>Stock</th>
@@ -42,11 +42,11 @@
                                 </td>
                                 <td class="name-pr">
                                     <a href="#">
-                                Lorem ipsum dolor sit amet
+                                Apple Chips
                             </a>
                                 </td>
                                 <td class="price-pr">
-                                    <p>$ 80.0</p>
+                                    <p>Rp 31.500</p>
                                 </td>
                                 <td class="quantity-box">In Stock</td>
                                 <td class="add-pr">
@@ -66,11 +66,11 @@
                                 </td>
                                 <td class="name-pr">
                                     <a href="#">
-                                Lorem ipsum dolor sit amet
+                                Bakpao Sayang
                             </a>
                                 </td>
                                 <td class="price-pr">
-                                    <p>$ 60.0</p>
+                                    <p>Rp 30.000</p>
                                 </td>
                                 <td class="quantity-box">In Stock</td>
                                 <td class="add-pr">
@@ -90,11 +90,11 @@
                                 </td>
                                 <td class="name-pr">
                                     <a href="#">
-                                Lorem ipsum dolor sit amet
+                                Bayam Crispy
                             </a>
                                 </td>
                                 <td class="price-pr">
-                                    <p>$ 30.0</p>
+                                    <p>Rp 8.700</p>
                                 </td>
                                 <td class="quantity-box">In Stock</td>
                                 <td class="add-pr">

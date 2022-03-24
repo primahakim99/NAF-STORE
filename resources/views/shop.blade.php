@@ -70,8 +70,8 @@
                                                 </div>
                                             </div>
                                             <div class="why-text">
-                                                <h4>Lorem ipsum dolor sit amet</h4>
-                                                <h5> $9.79</h5>
+                                                <h4>Apple Chips</h4>
+                                                <h5> Rp 31.500</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -92,8 +92,8 @@
                                                 </div>
                                             </div>
                                             <div class="why-text">
-                                                <h4>Lorem ipsum dolor sit amet</h4>
-                                                <h5> $9.79</h5>
+                                                <h4>Bakpao Sayang</h4>
+                                                <h5> Rp 30.000</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -114,8 +114,8 @@
                                                 </div>
                                             </div>
                                             <div class="why-text">
-                                                <h4>Lorem ipsum dolor sit amet</h4>
-                                                <h5> $9.79</h5>
+                                                <h4>Bayam Crispy</h4>
+                                                <h5> Rp 8.700</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -125,7 +125,7 @@
                                                 <div class="type-lb">
                                                     <p class="new">New</p>
                                                 </div>
-                                                <img src="Assets/images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                <img src="Assets/images/img-pro-04.jpg" class="img-fluid" alt="Image">
                                                 <div class="mask-icon">
                                                     <ul>
                                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -136,8 +136,8 @@
                                                 </div>
                                             </div>
                                             <div class="why-text">
-                                                <h4>Lorem ipsum dolor sit amet</h4>
-                                                <h5> $9.79</h5>
+                                                <h4>Broccoli Chips</h4>
+                                                <h5> Rp 17.000</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -147,7 +147,7 @@
                                                 <div class="type-lb">
                                                     <p class="sale">Sale</p>
                                                 </div>
-                                                <img src="Assets/images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                                <img src="Assets/images/img-pro-05.jpg" class="img-fluid" alt="Image">
                                                 <div class="mask-icon">
                                                     <ul>
                                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -158,8 +158,8 @@
                                                 </div>
                                             </div>
                                             <div class="why-text">
-                                                <h4>Lorem ipsum dolor sit amet</h4>
-                                                <h5> $9.79</h5>
+                                                <h4>Chili Chips</h4>
+                                                <h5> Rp 34.000</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -169,7 +169,7 @@
                                                 <div class="type-lb">
                                                     <p class="sale">Sale</p>
                                                 </div>
-                                                <img src="Assets/images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                                <img src="Assets/images/img-pro-06.jpg" class="img-fluid" alt="Image">
                                                 <div class="mask-icon">
                                                     <ul>
                                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -180,8 +180,8 @@
                                                 </div>
                                             </div>
                                             <div class="why-text">
-                                                <h4>Lorem ipsum dolor sit amet</h4>
-                                                <h5> $9.79</h5>
+                                                <h4>Cokelat Tempe Dekonco</h4>
+                                                <h5> Rp 10.000</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -191,7 +191,7 @@
                                                 <div class="type-lb">
                                                     <p class="sale">Sale</p>
                                                 </div>
-                                                <img src="Assets/images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                <img src="Assets/images/img-pro-07.jpg" class="img-fluid" alt="Image">
                                                 <div class="mask-icon">
                                                     <ul>
                                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -202,8 +202,8 @@
                                                 </div>
                                             </div>
                                             <div class="why-text">
-                                                <h4>Lorem ipsum dolor sit amet</h4>
-                                                <h5> $9.79</h5>
+                                                <h4>Gadung Chips</h4>
+                                                <h5> Rp 13.500</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -213,7 +213,7 @@
                                                 <div class="type-lb">
                                                     <p class="sale">Sale</p>
                                                 </div>
-                                                <img src="Assets/images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                                <img src="Assets/images/img-pro-08.jpg" class="img-fluid" alt="Image">
                                                 <div class="mask-icon">
                                                     <ul>
                                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -224,8 +224,8 @@
                                                 </div>
                                             </div>
                                             <div class="why-text">
-                                                <h4>Lorem ipsum dolor sit amet</h4>
-                                                <h5> $9.79</h5>
+                                                <h4>Klanceng Honey</h4>
+                                                <h5> Rp 110.000</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -235,7 +235,7 @@
                                                 <div class="type-lb">
                                                     <p class="new">New</p>
                                                 </div>
-                                                <img src="Assets/images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                                <img src="Assets/images/img-pro-09.jpg" class="img-fluid" alt="Image">
                                                 <div class="mask-icon">
                                                     <ul>
                                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -246,8 +246,140 @@
                                                 </div>
                                             </div>
                                             <div class="why-text">
-                                                <h4>Lorem ipsum dolor sit amet</h4>
-                                                <h5> $9.79</h5>
+                                                <h4>Jackfruit Chips</h4>
+                                                <h5> Rp 22.000</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="products-single fix">
+                                            <div class="box-img-hover">
+                                                <div class="type-lb">
+                                                    <p class="new">New</p>
+                                                </div>
+                                                <img src="Assets/images/img-pro-10.jpg" class="img-fluid" alt="Image">
+                                                <div class="mask-icon">
+                                                    <ul>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                    </ul>
+                                                    <a class="cart" href="#">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                            <div class="why-text">
+                                                <h4>Pia Mangkok</h4>
+                                                <h5> Rp 40.000</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="products-single fix">
+                                            <div class="box-img-hover">
+                                                <div class="type-lb">
+                                                    <p class="new">New</p>
+                                                </div>
+                                                <img src="Assets/images/img-pro-11.jpg" class="img-fluid" alt="Image">
+                                                <div class="mask-icon">
+                                                    <ul>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                    </ul>
+                                                    <a class="cart" href="#">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                            <div class="why-text">
+                                                <h4>Banana chips/h4>
+                                                <h5> Rp 18.000</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="products-single fix">
+                                            <div class="box-img-hover">
+                                                <div class="type-lb">
+                                                    <p class="new">New</p>
+                                                </div>
+                                                <img src="Assets/images/img-pro-12.jpg" class="img-fluid" alt="Image">
+                                                <div class="mask-icon">
+                                                    <ul>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                    </ul>
+                                                    <a class="cart" href="#">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                            <div class="why-text">
+                                                <h4> Apple Cider Drink SIIPLAH</h4>
+                                                <h5> Rp  32.000</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="products-single fix">
+                                            <div class="box-img-hover">
+                                                <div class="type-lb">
+                                                    <p class="new">New</p>
+                                                </div>
+                                                <img src="Assets/images/img-pro-13.jpg" class="img-fluid" alt="Image">
+                                                <div class="mask-icon">
+                                                    <ul>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                    </ul>
+                                                    <a class="cart" href="#">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                            <div class="why-text">
+                                                <h4>Veggie Chips</h4>
+                                                <h5> Rp 20.000</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="products-single fix">
+                                            <div class="box-img-hover">
+                                                <div class="type-lb">
+                                                    <p class="new">New</p>
+                                                </div>
+                                                <img src="Assets/images/img-pro-14.jpg" class="img-fluid" alt="Image">
+                                                <div class="mask-icon">
+                                                    <ul>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                    </ul>
+                                                    <a class="cart" href="#">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                            <div class="why-text">
+                                                <h4>Soya Bean Chips</h4>
+                                                <h5> Rp 5.500</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="products-single fix">
+                                            <div class="box-img-hover">
+                                                <div class="type-lb">
+                                                    <p class="new">New</p>
+                                                </div>
+                                                <img src="Assets/images/img-pro-15.jpg" class="img-fluid" alt="Image">
+                                                <div class="mask-icon">
+                                                    <ul>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                    </ul>
+                                                    <a class="cart" href="#">Add to Cart</a>
+                                                </div>
+                                            </div>
+                                            <div class="why-text">
+                                                <h4>Carrot Chips</h4>
+                                                <h5> Rp 17.000</h5>
                                             </div>
                                         </div>
                                     </div>

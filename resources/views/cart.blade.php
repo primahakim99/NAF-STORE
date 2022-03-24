@@ -25,7 +25,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Images</th>
+                                <th></th>
                                 <th>Product Name</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
@@ -42,15 +42,15 @@
                                 </td>
                                 <td class="name-pr">
                                     <a href="#">
-                                Lorem ipsum dolor sit amet
+                                Apple Chips
                             </a>
                                 </td>
                                 <td class="price-pr">
-                                    <p>$ 80.0</p>
+                                    <p>Rp 31.500</p>
                                 </td>
                                 <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
                                 <td class="total-pr">
-                                    <p>$ 80.0</p>
+                                    <p>Rp 31.500</p>
                                 </td>
                                 <td class="remove-pr">
                                     <a href="#">
@@ -66,15 +66,15 @@
                                 </td>
                                 <td class="name-pr">
                                     <a href="#">
-                                Lorem ipsum dolor sit amet
+                                Bakpao Sayang
                             </a>
                                 </td>
                                 <td class="price-pr">
-                                    <p>$ 60.0</p>
+                                    <p>Rp 30.000</p>
                                 </td>
                                 <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
                                 <td class="total-pr">
-                                    <p>$ 80.0</p>
+                                    <p>Rp 30.000</p>
                                 </td>
                                 <td class="remove-pr">
                                     <a href="#">
@@ -90,15 +90,15 @@
                                 </td>
                                 <td class="name-pr">
                                     <a href="#">
-                                Lorem ipsum dolor sit amet
+                                Bayam Crispy
                             </a>
                                 </td>
                                 <td class="price-pr">
-                                    <p>$ 30.0</p>
+                                    <p>Rp 8.700</p>
                                 </td>
                                 <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
                                 <td class="total-pr">
-                                    <p>$ 80.0</p>
+                                    <p>Rp 8.700</p>
                                 </td>
                                 <td class="remove-pr">
                                     <a href="#">
@@ -122,16 +122,16 @@
                     <h3>Order summary</h3>
                     <div class="d-flex">
                         <h4>Sub Total</h4>
-                        <div class="ml-auto font-weight-bold">  </div>
+                        <div class="ml-auto font-weight-bold">Rp 70.200</div>
                     </div>
                     <div class="d-flex">
                         <h4>Discount</h4>
-                        <div class="ml-auto font-weight-bold">  </div>
+                        <div class="ml-auto font-weight-bold">Rp 0</div>
                     </div>
                     <hr>
                     <div class="d-flex gr-total">
                         <h5>Grand Total</h5>
-                        <div class="ml-auto h5"> $ 388 </div>
+                        <div class="ml-auto h5">Rp 70.200</div>
                     </div>
                     <hr>
                     <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a>

@@ -43,6 +43,14 @@ Route::get('/checkout', function () {
     ]);
 });
 
+Route::get('/sign-in', function () {
+    return view('auth.SignIn');
+});
+
+Route::get('/sign-up', function () {
+    return view('auth.SignUp');
+});
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
