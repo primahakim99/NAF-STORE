@@ -89,14 +89,16 @@
                         <div class="title-left">
                             <h3>Payment</h3>
                         </div>
-                        <div class="d-block my-3">
-                            <div class="custom-control custom-radio">
-                                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                                <label class="custom-control-label" for="paypal">Debit Card</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                                <label class="custom-control-label" for="paypal">Credit Card</label>
+                        <div class="mb-4">
+                            <div class="d-block my-3">
+                                <div class="custom-control custom-radio">
+                                    <input id="paypal" name="paymentMethod" class="custom-control-input" checked="checked" type="radio">
+                                    <label class="custom-control-label" for="debit">Debit Card</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" >
+                                    <label class="custom-control-label" for="credit">Credit Card</label>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -149,16 +151,22 @@
                                 <div class="media mb-2 border-bottom">
                                     <div class="media-body"> <a href="detail.html">Apple Chips</a>
                                         <div class="medium">Rp 31.500<span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: Rp 31.500</div>
+                                        <label for="cc-name">Store account number:</label>
+                                        <input type="text" class="form-control" id="cc-name" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="media mb-2 border-bottom">
                                     <div class="media-body"> <a href="detail.html">Bakpao Sayang</a>
                                         <div class="medium">Price: Rp 30.000<span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: Rp 30.000</div>
+                                        <label for="cc-name">Store account number:</label>
+                                        <input type="text" class="form-control" id="cc-name" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="media mb-2">
                                     <div class="media-body"> <a href="detail.html">Bayam Crispy</a>
                                         <div class="medium">Price: Rp 8.700<span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: Rp 8.700</div>
+                                        <label for="cc-name">Store account number:</label>
+                                        <input type="text" class="form-control" id="cc-name" placeholder="" required>
                                     </div>
                                 </div>
                             </div>
