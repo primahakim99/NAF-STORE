@@ -17,6 +17,11 @@
 @endsection
 @section('content')
 <!-- Start Cart  -->
+@if(isset($errors)&& $errors != "[]")
+<div style="background-color: rgb(233, 135, 135); text-align: center; font-size: 50px; padding: 50px">
+    {{ $errors }}
+</div>
+@else
 <div class="cart-box-main">
     <div class="container">
         <div class="row">
@@ -37,73 +42,76 @@
                             <tr>
                                 <td class="thumbnail-img">
                                     <a href="#">
-                                <img class="img-fluid" src="Assets/images/img-pro-01.jpg" alt="" />
-                            </a>
+                                        <img class="img-fluid" src="Assets/images/img-pro-01.jpg" alt="" />
+                                    </a>
                                 </td>
                                 <td class="name-pr">
                                     <a href="#">
-                                Apple Chips
-                            </a>
+                                        Apple Chips
+                                    </a>
                                 </td>
                                 <td class="price-pr">
                                     <p>Rp 31.500</p>
                                 </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
+                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1"
+                                        class="c-input-text qty text"></td>
                                 <td class="total-pr">
                                     <p>Rp 31.500</p>
                                 </td>
                                 <td class="remove-pr">
                                     <a href="#">
-                                <i class="fas fa-times"></i>
-                            </a>
+                                        <i class="fas fa-times"></i>
+                                    </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="thumbnail-img">
                                     <a href="#">
-                                <img class="img-fluid" src="Assets/images/img-pro-02.jpg" alt="" />
-                            </a>
+                                        <img class="img-fluid" src="Assets/images/img-pro-02.jpg" alt="" />
+                                    </a>
                                 </td>
                                 <td class="name-pr">
                                     <a href="#">
-                                Bakpao Sayang
-                            </a>
+                                        Bakpao Sayang
+                                    </a>
                                 </td>
                                 <td class="price-pr">
                                     <p>Rp 30.000</p>
                                 </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
+                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1"
+                                        class="c-input-text qty text"></td>
                                 <td class="total-pr">
                                     <p>Rp 30.000</p>
                                 </td>
                                 <td class="remove-pr">
                                     <a href="#">
-                                <i class="fas fa-times"></i>
-                            </a>
+                                        <i class="fas fa-times"></i>
+                                    </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="thumbnail-img">
                                     <a href="#">
-                                <img class="img-fluid" src="Assets/images/img-pro-03.jpg" alt="" />
-                            </a>
+                                        <img class="img-fluid" src="Assets/images/img-pro-03.jpg" alt="" />
+                                    </a>
                                 </td>
                                 <td class="name-pr">
                                     <a href="#">
-                                Bayam Crispy
-                            </a>
+                                        Bayam Crispy
+                                    </a>
                                 </td>
                                 <td class="price-pr">
                                     <p>Rp 8.700</p>
                                 </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
+                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1"
+                                        class="c-input-text qty text"></td>
                                 <td class="total-pr">
                                     <p>Rp 8.700</p>
                                 </td>
                                 <td class="remove-pr">
                                     <a href="#">
-                                <i class="fas fa-times"></i>
-                            </a>
+                                        <i class="fas fa-times"></i>
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>
@@ -134,12 +142,14 @@
                         <div class="ml-auto h5">Rp 70.200</div>
                     </div>
                     <hr>
-                    <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a>
+                    <div class="col-12 d-flex shopping-box"><a href="checkout.html"
+                            class="ml-auto btn hvr-hover">Checkout</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endIf
 <!-- End Cart -->
 @endsection
