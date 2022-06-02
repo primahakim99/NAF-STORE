@@ -47,6 +47,11 @@
                         <input class="input100" type="text" name="phonenumber">
 					</div>
 
+                    <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+						<label for="phonenumber" class="col-md-4 col-form-label text-md-end">Username</label>
+                        <input class="input100" type="text" name="phonenumber">
+					</div>
+
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>

@@ -54,19 +54,19 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
                     <img class="img-fluid" src="Assets/images/banner-01.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Chips</a>
+                    <a class="btn hvr-hover" href="/shop">Chips</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
                     <img class="img-fluid" src="Assets/images/banner-02.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Snack</a>
+                    <a class="btn hvr-hover" href="/shop">Snack</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
                     <img class="img-fluid" src="Assets/images/banner-03.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Beverage</a>
+                    <a class="btn hvr-hover" href="/shop">Beverage</a>
                 </div>
             </div>
         </div>
