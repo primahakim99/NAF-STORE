@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,23 @@ Route::get('/sign-in', [WelcomeController::class, 'SignIn'])->name('auth.sign-in
 Route::get('/sign-up', [WelcomeController::class, 'SignUp'])->name('auth.sign-up');
 
 Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess');
+
+Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('AdminAccess');
+
+// Route::middleware(['auth','isAdmin'])->group(function(){
+//     Route::get('/dashboard', function () {
+//         return view('admin.home');
+    
+//     // Route::get('products', [ProductController::class, 'index']);
+//     // Route::get('add-products', [ProductController::class, 'add']);
+//     // Route::post('insert-products', [ProductController::class, 'insert']);
+//      });
+// });
+
+
 
 // Route::get('/', function () {
 //     return view('Home', [

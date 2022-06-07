@@ -2,10 +2,9 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Admin;
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth; //added
 
 class AdminAccess
 {
@@ -13,27 +12,25 @@ class AdminAccess
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
+     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
     {
-        $admin = Admin::all();
-        $isAdmin = False;
-        if (Auth::check()) {
-            for ($i = 0; $i < count($admin); $i++) {
-                if (auth()->user()->id == $admin[$i]->ID_User) {
-                    $isAdmin = True;
-                    break;
-                }
-            }
-            if ($isAdmin) {
+        if(Auth::check())
+        {
+            if(Auth::user()->role_as == '1')
+            {
                 return $next($request);
-            } else {
-                return redirect('home')->with('error', "You don't have branch access.");
             }
-        } else {
-            return redirect()->route('login');
+            else
+            {
+                return redirect('/home')->with('status','Access Denied! as you are not as admin');
+            }
+        }
+        else
+        {
+            return redirect('/home')->with('status','Please Login First');
         }
     }
 }

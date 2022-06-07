@@ -30,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -47,6 +47,18 @@ class LoginController extends Controller
         $fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
         request()->merge([$fieldType => $login]);
         return $fieldType;
+    }
+
+    protected function authenticated()
+    {
+        if(Auth::user()->role_as == '1') //1 = Admin Login
+        {
+            return redirect('dashboard')->with('status','Welcome to your dashboard');
+        }
+        elseif(Auth::user()->role_as == '0') // Normal or Default User Login
+        {
+            return redirect('/')->with('status','Logged in successfully');
+        }
     }
 
     /**
@@ -69,16 +81,16 @@ class LoginController extends Controller
         $this->username = $this->findUsername();
         if (Auth::attempt(array($this->username => $input['login'], 'password' => $input['password']))) {
 
-            return Redirect::route('home');
+            return Redirect::route('home'); // Route:HomeController
         } else {
             $errors = new MessageBag(['WrongCredentials' => ['These credentials do not match our records.']]);
             return Redirect::back()->withErrors($errors);
         }
     }
-    public function showLoginForm()
-    {
-        return view('auth.login', [
-            "title" => "NAF-STORE"
-        ]);
-    }
+    // public function showLoginForm()
+    // {
+    //     return view('auth.login', [
+    //         "title" => "NAF-STORE"
+    //     ]);
+    // }
 }

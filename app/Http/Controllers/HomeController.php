@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\User;
 use App\Models\Store;
 use Illuminate\Http\Request;
 
@@ -25,13 +26,14 @@ class HomeController extends Controller
      */
     public function checkAdmin()
     {
-        $admin = Admin::all();
+        $admin = User::all();
         $isAdmin = False;
         for ($i = 0; $i < count($admin); $i++) {
-            if (auth()->user()->id == $admin[$i]->ID_User) {
+            if (auth()->user()->role_as == '1') {
                 $isAdmin = True;
                 break;
             }
+            
         }
         return $isAdmin;
     }
