@@ -37,24 +37,26 @@ class HomeController extends Controller
         }
         return $isAdmin;
     }
-    public function checkStore()
+    
+    public function checkOwner()
     {
-        $store = Store::all();
-        $isStore = False;
-        for ($i = 0; $i < count($store); $i++) {
-            if (auth()->user()->id == $store[$i]->ID_User) {
-                $isStore = True;
+        $owner = User::all();
+        $isOwner = False;
+        for ($i = 0; $i < count($owner); $i++) {
+            if (auth()->user()->role_as == '2') {
+                $isOwner = True;
                 break;
             }
+            
         }
-        return $isStore;
+        return $isOwner;
     }
     public function index()
     {
         if ($this->checkAdmin()) {
             return redirect()->route('admin.home');
-        } else if ($this->checkStore()) {
-            return redirect()->route('store.home');
+        } else if ($this->checkOwner()) {
+            return redirect()->route('owner.home');
         } else {
             return redirect()->route('customer.home');
         }
@@ -63,9 +65,9 @@ class HomeController extends Controller
     {
         return view('admin.home');
     }
-    public function storeHome()
+    public function ownerHome()
     {
-        return view('store.home');
+        return view('owner.home');
     }
     public function customerHome()
     {

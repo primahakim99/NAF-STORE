@@ -29,7 +29,7 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess');
-
+Route::get('/owner/home', [HomeController::class, 'ownerHome'])->name('owner.home')->middleware('OwnerAccess');
 Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('AdminAccess');
 
 // Route::middleware(['auth','isAdmin'])->group(function(){
