@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V2</title>
+	<title>Sign Up</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -44,6 +44,11 @@
 
                     <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<label for="phonenumber" class="col-md-4 col-form-label text-md-end">E-mail</label>
+                        <input class="input100" type="text" name="phonenumber">
+					</div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+						<label for="phonenumber" class="col-md-4 col-form-label text-md-end">Username</label>
                         <input class="input100" type="text" name="phonenumber">
 					</div>
 
