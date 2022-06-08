@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; //added
 
-class AdminAccess
+class OwnerAccess
 {
     /**
      * Handle an incoming request.
@@ -19,7 +19,7 @@ class AdminAccess
     {
         if(Auth::check())
         {
-            if(Auth::user()->role_as == '1')
+            if(Auth::user()->role_as == '2')
             {
                 return $next($request);
             }

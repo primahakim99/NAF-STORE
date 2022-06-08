@@ -16,7 +16,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/shop', [WelcomeController::class, 'shop'])->name('shop');
 Route::get('/wishlist', [WelcomeController::class, 'wishlist'])->name('wishlist');
@@ -29,13 +28,60 @@ Route::get('/sign-up', [WelcomeController::class, 'SignUp'])->name('auth.sign-up
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Route::get('/store/home', [HomeController::class, 'storeHome'])->name('store.home')->middleware('StoreAccess');
-
+Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess');
+Route::get('/owner/home', [HomeController::class, 'ownerHome'])->name('owner.home')->middleware('OwnerAccess');
 Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('AdminAccess');
 
-Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess');
+// Route::middleware(['auth','isAdmin'])->group(function(){
+//     Route::get('/dashboard', function () {
+//         return view('admin.home');
 
-Auth::routes();
+//     // Route::get('products', [ProductController::class, 'index']);
+//     // Route::get('add-products', [ProductController::class, 'add']);
+//     // Route::post('insert-products', [ProductController::class, 'insert']);
+//      });
+// });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Route::get('/', function () {
+//     return view('Home', [
+//         "title" => "Home"
+//     ]);
+// });
+
+// Route::get('/shop', function () {
+//     return view('Shop', [
+//         "title" => "Shop"
+//     ]);
+// });
+
+// Route::get('/wishlist', function () {
+//     return view('Wishlist', [
+//         "title" => "Wishlist"
+//     ]);
+// });
+
+// Route::get('/cart', function () {
+//     return view('Cart', [
+//         "title" => "Cart"
+//     ]);
+// });
+
+// Route::get('/checkout', function () {
+//     return view('Checkout', [
+//         "title" => "Checkout"
+//     ]);
+// });
+
+// Route::get('/sign-in', function () {
+//     return view('auth.SignIn');
+// });
+
+// Route::get('/sign-up', function () {
+//     return view('auth.SignUp');
+// });
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
