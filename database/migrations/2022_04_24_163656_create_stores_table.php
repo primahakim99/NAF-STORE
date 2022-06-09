@@ -18,7 +18,7 @@ class CreateStoresTable extends Migration
             $table->unsignedBigInteger('ID_User');
             $table->foreign('ID_User')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('storeName');
-            $table->string('accountNumber');
+            $table->string('address');
             $table->timestamps();
         });
     }
