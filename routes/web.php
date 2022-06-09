@@ -32,10 +32,14 @@ Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('cus
 Route::get('/owner/home', [HomeController::class, 'ownerHome'])->name('owner.home')->middleware('OwnerAccess');
 Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('AdminAccess');
 
+Route::get('/admin', [WelcomeController::class, 'indexAdmin'])->name('welcomeAdmin');
+
+
+
 // Route::middleware(['auth','isAdmin'])->group(function(){
 //     Route::get('/dashboard', function () {
 //         return view('admin.home');
-    
+
 //     // Route::get('products', [ProductController::class, 'index']);
 //     // Route::get('add-products', [ProductController::class, 'add']);
 //     // Route::post('insert-products', [ProductController::class, 'insert']);

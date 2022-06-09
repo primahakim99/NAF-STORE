@@ -33,11 +33,11 @@ class HomeController extends Controller
                 $isAdmin = True;
                 break;
             }
-            
+
         }
         return $isAdmin;
     }
-    
+
     public function checkOwner()
     {
         $owner = User::all();
@@ -47,7 +47,7 @@ class HomeController extends Controller
                 $isOwner = True;
                 break;
             }
-            
+
         }
         return $isOwner;
     }
@@ -63,7 +63,8 @@ class HomeController extends Controller
     }
     public function adminHome()
     {
-        return view('admin.home');
+        //return view('admin.home');
+        return redirect()->route('welcomeAdmin');
     }
     public function ownerHome()
     {
@@ -71,6 +72,10 @@ class HomeController extends Controller
     }
     public function customerHome()
     {
-        return view('customer.home');
+        //return view('customer.home');
+        // return view('customer.welcome', [
+        //     "title" => "NAF-STORE"
+        // ]);
+        return redirect()->route('welcome');
     }
 }
