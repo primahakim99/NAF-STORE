@@ -14,8 +14,12 @@ class Store extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'ID_User',
+        'user_id',
         'storeName',
-        'accountNumber',
+        'address',
     ];
+
+    public function owner(){
+        return $this->hasOne(User::class);
+    }
 }
