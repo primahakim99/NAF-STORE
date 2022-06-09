@@ -1,4 +1,4 @@
-@extends('layouts.indexAdmin')
+@extends('layouts.indexOwner')
 @section('content')
 <!-- Start Slider -->
 <div id="slides-shop" class="cover-slides">
@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Admin NAF STORE</strong></h1>
+                        <h1 class="m-b-20"><strong>Welcome To <br> Owner NAF STORE</strong></h1>
                         <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
                         <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Admin NAF STORE</strong></h1>
+                        <h1 class="m-b-20"><strong>Welcome To <br> Owner NAF STORE</strong></h1>
                         <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
                         <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
@@ -32,7 +32,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Admin NAF STORE</strong></h1>
+                        <h1 class="m-b-20"><strong>Welcome To <br> Owner NAF STORE</strong></h1>
                         <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
                         <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
