@@ -63,7 +63,8 @@ class HomeController extends Controller
     }
     public function adminHome()
     {
-        return view('admin.home');
+        //return view('admin.home');
+        return redirect()->route('welcomeAdmin');
     }
     public function ownerHome()
     {
@@ -71,6 +72,10 @@ class HomeController extends Controller
     }
     public function customerHome()
     {
-        return view('customer.home');
+        //return view('customer.home');
+        // return view('customer.welcome', [
+        //     "title" => "NAF-STORE"
+        // ]);
+        return redirect()->route('welcome');
     }
 }

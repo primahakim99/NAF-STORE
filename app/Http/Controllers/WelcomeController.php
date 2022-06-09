@@ -14,6 +14,12 @@ class WelcomeController extends Controller
             "title" => "NAF-STORE"
         ]);
     }
+    public function indexAdmin()
+    {
+        return view('welcomeAdmin', [
+            "title" => "NAF-STORE-Admin"
+        ]);
+    }
 
     public function shop()
     {
