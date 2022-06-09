@@ -22,6 +22,12 @@ class WelcomeController extends Controller
             "title" => "NAF-STORE-Admin"
         ]);
     }
+    public function indexOwner()
+    {
+        return view('welcomeOwner', [
+            "title" => "NAF-STORE-Owner"
+        ]);
+    }
 
     public function shop()
     {
@@ -68,6 +74,48 @@ class WelcomeController extends Controller
             ]);
         }
     }
+
+//admin side
+    public function ownerData()
+    {
+        return view('admin.ownerData', [
+            "title" => "owner_data"
+        ]);
+    }
+    public function customerData()
+    {
+        return view('admin.customerData', [
+            "title" => "customer_data"
+        ]);
+    }
+    public function transaction()
+    {
+        return view('admin.transaction', [
+            "title" => "transaction"
+        ]);
+    }
+
+    //Owner Side
+    public function product_list()
+    {
+        return view('owner.productList', [
+            "title" => "product_list"
+        ]);
+    }
+    public function storeOwner()
+    {
+        return view('owner.storeOwner', [
+            "title" => "storeOwner"
+        ]);
+    }
+    public function orderOwner()
+    {
+        return view('owner.orderOwner', [
+            "title" => "orderOwner"
+        ]);
+    }
+
+
     public function signIn()
     {
         return view('auth.login', [

@@ -68,7 +68,7 @@ class HomeController extends Controller
     }
     public function ownerHome()
     {
-        return view('owner.home');
+        return redirect()->route('welcomeOwner');
     }
     public function customerHome()
     {
@@ -78,4 +78,5 @@ class HomeController extends Controller
         // ]);
         return redirect()->route('welcome');
     }
+    
 }

@@ -33,7 +33,17 @@ Route::get('/owner/home', [HomeController::class, 'ownerHome'])->name('owner.hom
 Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('AdminAccess');
 
 Route::get('/admin', [WelcomeController::class, 'indexAdmin'])->name('welcomeAdmin');
+Route::get('/owner', [WelcomeController::class, 'indexOwner'])->name('welcomeOwner');
 
+//admin side
+Route::get('/ownerData', [WelcomeController::class, 'ownerData'])->name('ownerData');
+Route::get('/customerData', [WelcomeController::class, 'customerData'])->name('customerData');
+Route::get('/transaction', [WelcomeController::class, 'transaction'])->name('transaction');
+
+//owner side
+Route::get('/productList', [WelcomeController::class, 'product_list'])->name('productList');
+Route::get('/storeOwner', [WelcomeController::class, 'storeOwner'])->name('storeOwner');
+Route::get('/orderOwner', [WelcomeController::class, 'orderOwner'])->name('orderOwner');
 
 
 // Route::middleware(['auth','isAdmin'])->group(function(){
