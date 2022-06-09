@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
@@ -19,7 +20,8 @@ class WelcomeController extends Controller
     public function indexAdmin()
     {
         return view('welcomeAdmin', [
-            "title" => "NAF-STORE-Admin"
+            "title" => "NAF-STORE-Admin",
+
         ]);
     }
     public function indexOwner()
@@ -32,7 +34,8 @@ class WelcomeController extends Controller
     public function shop()
     {
         return view('Shop', [
-            "title" => "Shop"
+            "title" => "Shop",
+            "products" => product::all(),
         ]);
     }
     public function wishlist()
