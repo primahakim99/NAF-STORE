@@ -16,17 +16,20 @@ class CategorySeeder extends Seeder
     {
         Category::create([
             'name' => 'Beverage',
-            'slug' => 'beverage'
+            'slug' => 'beverage',
+            'image' => 'Assets/images/banner-03.jpg'
         ]);
         
         Category::create([
             'name' => 'Chips',
-            'slug' => 'chips'
+            'slug' => 'chips',
+            'image' => 'Assets/images/banner-01.jpg'
         ]);
 
         Category::create([
             'name' => 'Snack',
-            'slug' => 'snack'
+            'slug' => 'snack',
+            'image' => 'Assets/images/banner-02.jpg'
         ]);
     }
 }

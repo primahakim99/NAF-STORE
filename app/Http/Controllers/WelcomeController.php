@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Auth;
 
 class WelcomeController extends Controller
 {
     public function index()
     {
         return view('welcome', [
-            "title" => "NAF-STORE"
+            "title" => "NAF-STORE",
+            'categories' => Category::all(),
         ]);
     }
 

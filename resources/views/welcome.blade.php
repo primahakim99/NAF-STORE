@@ -51,24 +51,14 @@
 <div class="categories-shop">
     <div class="container">
         <div class="row">
+            @foreach($categories as $category)
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
-                    <img class="img-fluid" src="Assets/images/banner-01.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Chips</a>
+                    <img class="img-fluid" src="{{ $category->image }}" alt="" />
+                    <a class="btn hvr-hover" href="#">{{ $category->name }}</a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="Assets/images/banner-02.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Snack</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="Assets/images/banner-03.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Beverage</a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
