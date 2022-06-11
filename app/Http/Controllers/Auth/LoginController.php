@@ -49,15 +49,18 @@ class LoginController extends Controller
         return $fieldType;
     }
 
-    protected function authenticated()
+    protected function redirectTo()
     {
-        if(Auth::user()->role_as == '1') //1 = Admin Login
+        if(Auth::user()->role_as == 'admin') 
         {
-            return redirect('dashboard')->with('status','Welcome to your dashboard');
+            return redirect('/admin');
         }
-        elseif(Auth::user()->role_as == '0') // Normal or Default User Login
+        elseif(Auth::user()->role_as == 'owner')
         {
-            return redirect('/')->with('status','Logged in successfully');
+            return redirect('/owner');
+        }
+        else{
+            return redirect('/');
         }
     }
 
@@ -81,7 +84,7 @@ class LoginController extends Controller
         $this->username = $this->findUsername();
         if (Auth::attempt(array($this->username => $input['login'], 'password' => $input['password']))) {
 
-            return Redirect::route('home'); // Route:HomeController
+            return $this->redirectTo();
         } else {
             $errors = new MessageBag(['WrongCredentials' => ['These credentials do not match our records.']]);
             return Redirect::back()->withErrors($errors);

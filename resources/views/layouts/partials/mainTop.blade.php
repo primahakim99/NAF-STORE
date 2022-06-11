@@ -9,7 +9,7 @@
                             class="text-white">Sign Up</a></h4>
                     @endif
                     @else
-                    <h4><a href="{{ route('home') }}" class="text-white">{{ Auth::user()->name }}</a></h4>
+                    <h4><a href="{{ route('welcome') }}" class="text-white">{{ Auth::user()->name }}</a></h4>
                     <a style="color: #ffff" id="logout-btn" class="btn btn-sm btn-denger" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">

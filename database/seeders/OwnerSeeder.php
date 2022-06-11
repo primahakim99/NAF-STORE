@@ -22,7 +22,7 @@ class OwnerSeeder extends Seeder
             'phone'=> '089374658834',
             'email'=> 'safrina@gmail.com',
             'password'=> Hash::make('safrina123'),
-            'role_as'=> 2,
+            'role_as'=> 'owner',
 
         ]);
         DB::table('users')->insert([
@@ -31,7 +31,7 @@ class OwnerSeeder extends Seeder
             'phone'=> '089374658834',
             'email'=> 'diyka@gmail.com',
             'password'=> Hash::make('diyka123'),
-            'role_as'=> 2,
+            'role_as'=> 'owner',
 
         ]);
 

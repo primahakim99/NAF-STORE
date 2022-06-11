@@ -27,13 +27,20 @@ Route::get('/sign-up', [WelcomeController::class, 'SignUp'])->name('auth.sign-up
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess');
-Route::get('/owner/home', [HomeController::class, 'ownerHome'])->name('owner.home')->middleware('OwnerAccess');
-Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('AdminAccess');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/admin', [WelcomeController::class, 'indexAdmin'])->name('welcomeAdmin');
-Route::get('/owner', [WelcomeController::class, 'indexOwner'])->name('welcomeOwner');
+Route::middleware(['auth', 'OwnerAccess'])->group(function () {
+    // Route::get('/owner', [HomeController::class, 'ownerHome'])->name('owner.home');
+    Route::get('/owner', [WelcomeController::class, 'indexOwner'])->name('welcomeOwner');
+});
+
+Route::middleware(['auth', 'AdminAccess'])->group(function () {
+    // Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home');
+    Route::get('/admin', [WelcomeController::class, 'indexAdmin'])->name('welcomeAdmin');
+});
+
+Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess');
+
 
 //admin side
 Route::get('/ownerData', [WelcomeController::class, 'ownerData'])->name('ownerData');

@@ -23,8 +23,8 @@ class UserAccess
     public function handle(Request $request, Closure $next)
     {
         $user = User::all();
-        $admins = Admin::pluck('ID_user')->all();
-        $stores = Store::pluck('ID_user')->all();
+        $admins = User::pluck('id')->all();
+        $stores = Store::pluck('user_id')->all();
         $adminsStores = array_merge($admins, $stores);
         $isUser = False;
         if (Auth::check()) {

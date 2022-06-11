@@ -19,18 +19,18 @@ class OwnerAccess
     {
         if(Auth::check())
         {
-            if(Auth::user()->role_as == '2')
+            if(Auth::user()->role_as == 'owner')
             {
                 return $next($request);
             }
             else
             {
-                return redirect('/home')->with('status','Access Denied! as you are not as admin');
+                return redirect('/')->with('status','Access Denied! as you are not as owner');
             }
         }
         else
         {
-            return redirect('/home')->with('status','Please Login First');
+            return redirect('/')->with('status','Please Login First');
         }
     }
 }
