@@ -39,7 +39,7 @@ Route::middleware(['auth', 'AdminAccess'])->group(function () {
     Route::get('/admin', [WelcomeController::class, 'indexAdmin'])->name('welcomeAdmin');
 });
 
-Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess');
+// Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess'); 
 
 
 //admin side
