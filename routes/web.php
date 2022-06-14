@@ -32,25 +32,27 @@ Auth::routes();
 Route::middleware(['auth', 'OwnerAccess'])->group(function () {
     // Route::get('/owner', [HomeController::class, 'ownerHome'])->name('owner.home');
     Route::get('/owner', [WelcomeController::class, 'indexOwner'])->name('welcomeOwner');
+    //owner side
+    Route::get('/productList', [WelcomeController::class, 'product_list'])->name('productList');
+    Route::get('/storeOwner', [WelcomeController::class, 'storeOwner'])->name('storeOwner');
+    Route::get('/orderOwner', [WelcomeController::class, 'orderOwner'])->name('orderOwner');
 });
 
 Route::middleware(['auth', 'AdminAccess'])->group(function () {
     // Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home');
     Route::get('/admin', [WelcomeController::class, 'indexAdmin'])->name('welcomeAdmin');
+    //admin side
+    Route::get('/ownerData', [WelcomeController::class, 'ownerData'])->name('ownerData');
+    Route::get('/customerData', [WelcomeController::class, 'customerData'])->name('customerData');
+    Route::get('/transaction', [WelcomeController::class, 'transaction'])->name('transaction');
 });
 
 // Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess'); 
 
 
-//admin side
-Route::get('/ownerData', [WelcomeController::class, 'ownerData'])->name('ownerData');
-Route::get('/customerData', [WelcomeController::class, 'customerData'])->name('customerData');
-Route::get('/transaction', [WelcomeController::class, 'transaction'])->name('transaction');
 
-//owner side
-Route::get('/productList', [WelcomeController::class, 'product_list'])->name('productList');
-Route::get('/storeOwner', [WelcomeController::class, 'storeOwner'])->name('storeOwner');
-Route::get('/orderOwner', [WelcomeController::class, 'orderOwner'])->name('orderOwner');
+
+
 
 
 // Route::middleware(['auth','isAdmin'])->group(function(){
