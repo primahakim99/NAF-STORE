@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OwnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +30,6 @@ Route::get('/sign-up', [WelcomeController::class, 'SignUp'])->name('auth.sign-up
 
 Auth::routes();
 
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'OwnerAccess'])->group(function () {
     // Route::get('/owner', [HomeController::class, 'ownerHome'])->name('owner.home');
@@ -43,8 +44,10 @@ Route::middleware(['auth', 'AdminAccess'])->group(function () {
     // Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home');
     Route::get('/admin', [WelcomeController::class, 'indexAdmin'])->name('welcomeAdmin');
     //admin side
-    Route::get('/ownerData', [WelcomeController::class, 'ownerData'])->name('ownerData');
-    Route::get('/customerData', [WelcomeController::class, 'customerData'])->name('customerData');
+    // Route::get('/ownerData', [OwnerController::class, 'index'])->name('customerData');
+    // Route::get('/customerData', [CustomerController::class, 'index'])->name('customerData');
+    Route::resource('ownerData',OwnerController::class);
+Route::resource('customerData',CustomerController::class);
     Route::get('/transaction', [WelcomeController::class, 'transaction'])->name('transaction');
 });
 
@@ -54,6 +57,16 @@ Route::post('add_to_cart', [CartController::class, 'store']);//add-to-cart
 
 // Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess');
 
+//Route get=> customerData => index
+//Route get => customerData/create => create
+//Route get => customerData/{id} => show
+//Route get => customerData/{id}/edit => edit
+//Route post=> customerData =>store
+//Route put/patch => customerData/{id} => update
+//Route delete => customerData/{id} => destroy
+
+
+// Route::get('/customerData', [CustomerController::class, 'index'])->name('home');
 
 
 
