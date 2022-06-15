@@ -55,23 +55,20 @@
                             <div class="invalid-feedback"> Please enter your shipping address. </div>
                         </div>
                         <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="province">Province *</label>
+                                <input type="text" class="form-control" id="province" placeholder="" required>
+                                <div class="invalid-feedback"> Please enter your shipping Postal Code. </div>
+                                </select>
+                            </div>
                             <div class="col-md-5 mb-3">
                                 <label for="country">Country *</label>
                                 <input type="text" class="form-control" id="country" placeholder="" required>
                                 <div class="invalid-feedback"> Please enter your shipping Country. </div>
                                 </select>
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="state">Postal Code *</label>
-                                <input type="text" class="form-control" id="postalCode" placeholder="" required>
-                                <div class="invalid-feedback"> Please enter your shipping Postal Code. </div>
-                                </select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="state">Island *</label>
-                                <input type="text" class="form-control" id="island" placeholder="" required>
-                                <div class="invalid-feedback"> Please enter your shipping Island. </div>
-                            </div>
+
+
                         </div>
                         <div class="title-left">
                             <h3>Shipping Method</h3>
@@ -169,22 +166,6 @@
                                     <div class="media-body"> <a href="detail.html">Apple Chips</a>
                                         <div class="medium">Rp 31.500<span class="mx-2">|</span> Qty: 1 <span
                                                 class="mx-2">|</span> Subtotal: Rp 31.500</div>
-                                        <label for="cc-name">Store account number:</label>
-                                        <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="media mb-2 border-bottom">
-                                    <div class="media-body"> <a href="detail.html">Bakpao Sayang</a>
-                                        <div class="medium">Price: Rp 30.000<span class="mx-2">|</span> Qty: 1 <span
-                                                class="mx-2">|</span> Subtotal: Rp 30.000</div>
-                                        <label for="cc-name">Store account number:</label>
-                                        <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="media mb-2">
-                                    <div class="media-body"> <a href="detail.html">Bayam Crispy</a>
-                                        <div class="medium">Price: Rp 8.700<span class="mx-2">|</span> Qty: 1 <span
-                                                class="mx-2">|</span> Subtotal: Rp 8.700</div>
                                         <label for="cc-name">Store account number:</label>
                                         <input type="text" class="form-control" id="cc-name" placeholder="" required>
                                     </div>

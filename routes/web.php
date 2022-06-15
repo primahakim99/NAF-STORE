@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +48,11 @@ Route::middleware(['auth', 'AdminAccess'])->group(function () {
     Route::get('/transaction', [WelcomeController::class, 'transaction'])->name('transaction');
 });
 
-// Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess'); 
+Route::post('add_to_cart', [CartController::class, 'store']);//add-to-cart
+
+
+
+// Route::get('/customer/home', [HomeController::class, 'customerHome'])->name('customer.home')->middleware('UserAccess');
 
 
 
