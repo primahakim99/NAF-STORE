@@ -32,12 +32,13 @@
             <td>{{$value->address}}</td>
             <td>{{$value->postal_code}}</td>
             <td>
-            <form action="{{ route('customerData.destroy',$value->id) }}" method="POST">
+                <form action="{{ route('customerData.destroy',$value->id) }}" method="POST">
                 <a class="btn btn-info" href="{{ route('customerData.show',$value->id) }}">Show</a>
                 <a class="btn btn-primary" href="{{ route('customerData.edit',$value->id) }}">Edit</a>
             
                 
-                {{ csrf_field() }} 
+                @csrf
+                @method("DELETE")
                 <input type="hidden" name="_method" value="DELETE">
                 <button type="submit" class="btn btn-danger">Delete</button>
                 </form>

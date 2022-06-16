@@ -21,8 +21,6 @@ class CustomerController extends Controller
 
         ]);
 
-       
-
     }
 
     /**
@@ -71,7 +69,7 @@ class CustomerController extends Controller
         return view(
             'admin.customerDetail', 
             compact('model')
-    );
+        );
     }
 
     /**
@@ -105,8 +103,7 @@ class CustomerController extends Controller
             'email' => 'required',
             // 'password' => 'required',
             'address' => 'required',
-            'postal_code' => 'required',
-            
+            'postal_code' => 'required', 
             ]);
             //Eloquent function to update the data
         $model = User::find($id);
@@ -120,16 +117,12 @@ class CustomerController extends Controller
 
         return redirect('customerData');
     }
-
     /**
-     * Remove the specified resource from storage.
-     *
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        
+    { 
         User::where('id', $id)->delete();
         return redirect()->route('customerData.index');
         

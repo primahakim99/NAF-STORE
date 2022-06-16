@@ -30,7 +30,11 @@ class OwnerController extends Controller
      */
     public function create()
     {
-        //
+        $model = new User;
+        return view(
+            'admin.ownerCreate', 
+            compact('model')
+        );
     }
 
     /**
@@ -41,7 +45,17 @@ class OwnerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new User;
+        $model->name = $request->name;
+        $model->phone = $request->phone;
+        $model->email = $request->email;
+        $model->password = $request->phone;
+        $model->address = $request->address;
+        $model->postal_code = $request->postal_code;
+        $model->role_as = $request->role_as;
+        $model->save();
+
+        return redirect('ownerData');
     }
 
     /**
@@ -52,7 +66,11 @@ class OwnerController extends Controller
      */
     public function show($id)
     {
-        //
+        $model = User::find($id);
+        return view(
+            'admin.ownerDetail', 
+            compact('model')
+        );
     }
 
     /**
@@ -63,7 +81,11 @@ class OwnerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = User::find($id);
+        return view(
+            'admin.ownerEdit', 
+            compact('model')
+        );
     }
 
     /**
@@ -75,7 +97,26 @@ class OwnerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+                //validate the data
+                $request->validate([
+                    'name' => 'required',
+                    'phone' => 'required',
+                    'email' => 'required',
+                    // 'password' => 'required',
+                    'address' => 'required',
+                    'postal_code' => 'required', 
+                    ]);
+                    //Eloquent function to update the data
+                $model = User::find($id);
+                $model->name = $request->get('name');
+                $model->phone = $request->get('phone');
+                $model->email = $request->get('email');
+                $model->password = $request->get('phone');
+                $model->address = $request->get('address');
+                $model->postal_code = $request->get('postal_code');
+                $model->save();
+        
+                return redirect('ownerData');
     }
 
     /**
@@ -86,6 +127,7 @@ class OwnerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::where('id', $id)->delete();
+        return redirect()->route('ownerData.index');
     }
 }

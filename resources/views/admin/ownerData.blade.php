@@ -32,12 +32,15 @@
             <td>{{$value->address}}</td>
             <td>{{$value->postal_code}}</td>
             <td>
-                @csrf
-                @method('DELETE')
+                <form action="{{ route('ownerData.destroy',$value->id) }}" method="POST">
                 <a class="btn btn-info" href="{{ route('ownerData.show',$value->id) }}">Show</a>
                 <a class="btn btn-primary" href="{{ route('ownerData.edit',$value->id) }}">Edit</a>
+            
+                @csrf
+                @method("DELETE")
+                <input type="hidden" name="_method" value="DELETE">
                 <button type="submit" class="btn btn-danger">Delete</button>
-
+                </form>
             </td>
         </tr>
         @endforeach
