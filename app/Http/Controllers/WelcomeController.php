@@ -55,16 +55,7 @@ class WelcomeController extends Controller
     }
     public function cart()
     {
-        if (Auth::check()) {
-            return view('Cart', [
-                "title" => "Cart"
-            ]);
-        } else {
-            return view('Cart', [
-                "title" => "Cart",
-                'errors' => 'You need to login first. :)'
-            ]);
-        }
+
     }
     public function checkout()
     {

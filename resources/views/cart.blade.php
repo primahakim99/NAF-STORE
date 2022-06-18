@@ -27,100 +27,57 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="table-main table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Product Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
-                                <th>Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="Assets/images/img-pro-01.jpg" alt="" />
-                                    </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        Apple Chips
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>Rp 31.500</p>
-                                </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1"
-                                        class="c-input-text qty text"></td>
-                                <td class="total-pr">
-                                    <p>Rp 31.500</p>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="Assets/images/img-pro-02.jpg" alt="" />
-                                    </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        Bakpao Sayang
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>Rp 30.000</p>
-                                </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1"
-                                        class="c-input-text qty text"></td>
-                                <td class="total-pr">
-                                    <p>Rp 30.000</p>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="Assets/images/img-pro-03.jpg" alt="" />
-                                    </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        Bayam Crispy
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>Rp 8.700</p>
-                                </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1"
-                                        class="c-input-text qty text"></td>
-                                <td class="total-pr">
-                                    <p>Rp 8.700</p>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="col-lg-12 col-sm-6">
-                        <div class="update-box">
-                            <input value="Update Cart" type="submit">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($carts as $cart)
+                                <tr>
+
+                                    <td class="thumbnail-img">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{$cart->image}}" alt="" />
+                                        </a>
+                                    </td>
+                                    <td class="name-pr">
+                                        <a href="#">
+                                            {{$cart->name}}
+                                        </a>
+                                    </td>
+                                    <td class="price-pr">
+                                        <p>Rp {{$cart->price}}</p>
+                                    </td>
+                                    <td class="quantity-box">
+                                        <input type="number" size="4" value="{{$cart->product_qty}}" min="0" step="1" class="c-input-text qty text" name="qty">
+
+                                    </td>
+                                    <td class="total-pr">
+                                        <p>Rp {{$cart->product_qty*$cart->price}}</p>
+                                    </td>
+                                    <td class="remove-pr">
+                                        <a href="#">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        <div class="col-lg-12 col-sm-6">
+                            <div class="update-box">
+                                <input type="hidden" name="cart_id" value="{{$cart->id}}">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
                         </div>
-                    </div>
+
                 </div>
             </div>
 

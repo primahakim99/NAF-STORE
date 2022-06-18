@@ -22,7 +22,7 @@ use App\Http\Controllers\OwnerController;
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/shop', [WelcomeController::class, 'shop'])->name('shop');
 Route::get('/wishlist', [WelcomeController::class, 'wishlist'])->name('wishlist');
-Route::get('/cart', [WelcomeController::class, 'cart'])->name('cart');
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/checkout', [WelcomeController::class, 'checkout'])->name('checkout');
 
 Route::get('/sign-in', [WelcomeController::class, 'SignIn'])->name('auth.sign-in');
@@ -51,7 +51,11 @@ Route::resource('customerData',CustomerController::class);
     Route::get('/transaction', [WelcomeController::class, 'transaction'])->name('transaction');
 });
 
+
 Route::post('add_to_cart', [CartController::class, 'store']);//add-to-cart
+Route::put('update_qty', [CartController::class, 'update']);//add-to-cart
+
+
 
 
 
