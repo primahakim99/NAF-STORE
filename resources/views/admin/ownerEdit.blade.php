@@ -4,7 +4,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 24rem;">
             <div class="card-header">
-                Update Customer Data
+                Update Owner Data
             </div>
             <div class="card-body">
                 @if ($errors->any())
@@ -18,7 +18,7 @@
                 </div>
                 @endif
 
-                <form method="post" action="{{ route('customerData.update', $model->id) }}" id="myForm"  enctype="multipart/form-data">
+                <form method="post" action="{{ route('ownerData.update', $model->id) }}" id="myForm"  enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                     <div class="form-group">

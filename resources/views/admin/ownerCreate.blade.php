@@ -4,7 +4,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 24rem;">
             <div class="card-header">
-                Update Customer Data
+                Add Owner
             </div>
             <div class="card-body">
                 @if ($errors->any())
@@ -17,29 +17,31 @@
                     </ul>
                 </div>
                 @endif
-
-                <form method="post" action="{{ route('customerData.update', $model->id) }}" id="myForm"  enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
+                <form method="POST" action="{{url('ownerData')}}">
+                    @csrf
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control" id="name" aria-describedby="name" value="{{$model->name}}">
+                        <input type="text" name="name" class="form-control" id="name" aria-describedby="name" >
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="text" name="phone" class="form-control" id="phone" aria-describedby="phone" value="{{$model->phone}}">
+                        <input type="text" name="phone" class="form-control" id="phone" aria-describedby="phone" >
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" name="email" class="form-control" id="email" aria-describedby="email" value="{{$model->email}}">
+                        <input type="text" name="email" class="form-control" id="email" aria-describedby="email" >
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <input type="text" name="address" class="form-control" id="address" aria-describedby="address" value="{{$model->address}}">
+                        <input type="text" name="address" class="form-control" id="address" aria-describedby="address" >
                     </div>
                     <div class="form-group">
                         <label for="postal_code">Postal Code</label>
-                        <input type="text" name="postal_code" class="form-control" id="postal_code" aria-describedby="postal_code" value="{{$model->postal_code}}">
+                        <input type="text" name="postal_code" class="form-control" id="postal_code" aria-describedby="postal_code" >
+                    </div>
+                    <div class="form-group">
+                        <label for="role_as">Role</label>
+                        <input type="text" name="role_as" class="form-control" id="role_as" aria-describedby="role_as" >
                     </div>
 
 
