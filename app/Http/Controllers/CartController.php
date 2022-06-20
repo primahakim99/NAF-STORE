@@ -62,6 +62,17 @@ class CartController extends Controller
         return redirect('/cart');
     }
 
+    public function update($id, $quantity){
+        $cart = Cart::where('id', $id)->increment('product_qty', $quantity);
+        return redirect()->back()->with('message', 'Product Quantity Update');
+    }
+
+    public function destroy($id){
+        $cart = Cart::find($id);
+        $cart->delete();
+        return redirect()->back()->with('message', 'Product Successfully Delete from Cart');
+    }
+
     // public function increment($rowId){
     //     $cart = Cart::get($rowId);
     //     $qty = $cart->product_qty + 1;

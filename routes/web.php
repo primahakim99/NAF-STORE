@@ -59,7 +59,8 @@ Route::middleware(['auth', 'AdminAccess'])->group(function () {
 
 
 Route::post('add_to_cart', [CartController::class, 'store']);//add-to-cart
-Route::put('update_qty', [CartController::class, 'update']);//add-to-cart
+Route::get('/updatecart/{id}/{quantity}', [CartController::class, 'update']);
+Route::get('/deletecart/{id}', [CartController::class, 'destroy']);
 
 
 

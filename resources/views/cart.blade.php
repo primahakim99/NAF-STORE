@@ -27,56 +27,59 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="table-main table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Product Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                    <th>Remove</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($carts as $cart)
-                                <tr>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($carts as $cart)
+                            <tr>
 
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{$cart->image}}" alt="" />
-                                        </a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-                                            {{$cart->name}}
-                                        </a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>Rp {{$cart->price}}</p>
-                                    </td>
-                                    <td class="quantity-box">
-                                        <input type="number" size="4" value="{{$cart->product_qty}}" min="0" step="1" class="c-input-text qty text" name="qty">
+                                <td class="thumbnail-img">
+                                    <a href="#">
+                                        <img class="img-fluid" src="{{$cart->image}}" alt="" />
+                                    </a>
+                                </td>
+                                <td class="name-pr">
+                                    <a href="#">
+                                        {{$cart->name}}
+                                    </a>
+                                </td>
+                                <td class="price-pr">
+                                    <p>Rp {{$cart->price}}</p>
+                                </td>
+                                <td class="quantity-box">
+                                <div class="input-group text-center mb-3">
+                                    @if($cart->product_qty > 1)
+                                    <a href="{{url('/updatecart/'.$cart->id.'/-1')}}"
+                                        class="btn btn-sm bg-primary">-</a>
+                                    @endif
+                                    <input type="text" value="{{$cart->product_qty}}" name="qty"
+                                        class="form-control qty-input text-center" style="width:50px; height:35px">
+                                    <a href="{{url('/updatecart/'.$cart->id.'/1')}}"
+                                        class="btn btn-sm bg-primary">+</a>
+                                </div>
 
-                                    </td>
-                                    <td class="total-pr">
-                                        <p>Rp {{$cart->product_qty*$cart->price}}</p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-                                            <i class="fas fa-times"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        <div class="col-lg-12 col-sm-6">
-                            <div class="update-box">
-                                <input type="hidden" name="cart_id" value="{{$cart->id}}">
-                                <button type="submit" class="btn btn-primary">Update</button>
-                            </div>
-                        </div>
+                                </td>
+                                <td class="total-pr">
+                                    <p>Rp {{$cart->product_qty*$cart->price}}</p>
+                                </td>
+                                <td class="remove-pr">
+                                    <a href="{{ url('deletecart/'.$cart->id) }}">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
