@@ -19,7 +19,7 @@ class ProductController extends Controller
     public function index()
     {
         $product = Product::join('stores', 'products.store_id', '=', 'stores.id')->where('user_id', auth()->user()->id)->get();
-        return view('owner.product.bismillah', compact('product'), [
+        return view('owner.product.index', compact('product'), [
             'title' => 'Product List',
         ]);
     }
