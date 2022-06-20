@@ -98,6 +98,59 @@
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($carts as $cart)
+                            <tr>
+
+                                <td class="thumbnail-img">
+                                    <a href="#">
+                                        <img class="img-fluid" src="{{$cart->image}}" alt="" />
+                                    </a>
+                                </td>
+                                <td class="name-pr">
+                                    <a href="#">
+                                        {{$cart->name}}
+                                    </a>
+                                </td>
+                                <td class="price-pr">
+                                    <p>Rp {{$cart->price}}</p>
+                                </td>
+                                <td class="quantity-box">
+                                <div class="input-group text-center mb-3">
+                                    @if($cart->product_qty > 1)
+                                    <a href="{{url('/updatecart/'.$cart->id.'/-1')}}"
+                                        class="btn btn-sm bg-primary">-</a>
+                                    @endif
+                                    <input type="text" value="{{$cart->product_qty}}" name="qty"
+                                        class="form-control qty-input text-center" style="width:50px; height:35px">
+                                    <a href="{{url('/updatecart/'.$cart->id.'/1')}}"
+                                        class="btn btn-sm bg-primary">+</a>
+                                </div>
+
+                                </td>
+                                <td class="total-pr">
+                                    <p>Rp {{$cart->product_qty*$cart->price}}</p>
+                                </td>
+                                <td class="remove-pr">
+                                    <a href="{{ url('deletecart/'.$cart->id) }}">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
 
                 </div>
             </div>

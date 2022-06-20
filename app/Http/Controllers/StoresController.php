@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Store;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
-class StoreController extends Controller
+class StoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +15,9 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $store = Store::where('user_id', auth()->user()->id)->get();
-        return view('owner.store.index',[
-            "title" => "Store Owner",
-            'store' => $store,
+        return view('admin.store.index', [
+            "title" => "Store Data",
+            'stores' => User::join('stores', 'stores.user_id', '=', 'users.id')->get(),
         ]);
     }
 
@@ -30,7 +28,11 @@ class StoreController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.store.create',[
+            "title" => "Input Store Data",
+            'users' => User::where('role_as', 'owner')->get(),
+            'stores' => Store::all(),
+        ]);
     }
 
     /**
@@ -41,7 +43,13 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new Store;
+        $model->user_id = $request->user_id;
+        $model->storeName = $request->storeName;
+        $model->address = $request->address;
+        $model->save();
+
+        return redirect('storeData');
     }
 
     /**
@@ -63,11 +71,7 @@ class StoreController extends Controller
      */
     public function edit(Store $store)
     {
-        $store = Store::where('user_id', auth()->user()->id)->get();
-        return view('owner.store.edit', [
-            'title' => 'Store Edit',
-            'stores' => $store,
-        ]);
+        //
     }
 
     /**
@@ -77,29 +81,9 @@ class StoreController extends Controller
      * @param  \App\Models\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Store $store, $id)
+    public function update(Request $request, Store $store)
     {
-        $store = Store::find($id);
-        $user = User::find(auth()->user()->id);
-
-        $store->storeName = $request->storeName;
-        $store->address = $request->address;
-        $store->description = $request->description;
-        $user->name = $request->name;
-        $user->phone = $request->phone;
-        $user->email = $request->email;
-
-        if ($request->hasFile('img')) {
-            if ($store->img && file_exists(storage_path('app/public/'. $store->img))) {
-                Storage::delete(['public/', $store->img]);
-            }
-            $image_name = $request->file('img')->store('store', 'public');
-            $store->img = $image_name;
-        }
-        $store->save();
-        $user->save();
-        return redirect('/storeOwner')
-                ->with('success', 'Store Update');
+        //
     }
 
     /**
@@ -108,8 +92,9 @@ class StoreController extends Controller
      * @param  \App\Models\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Store $store)
+    public function destroy(Store $store, $id)
     {
-        //
+        Store::where('id', $id)->delete();
+        return redirect()->route('storeData.index');
     }
 }

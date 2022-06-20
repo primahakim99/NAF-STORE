@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left mt-2">
-            <h1>Owner Data</h1>
+            <h1>Store Data</h1>
             </div>
             <div class="float-right my-2">
-                <a class="btn btn-success" href="{{ url('ownerData/create') }}"> Input Owner Data</a>
+                <a class="btn btn-success" href="{{ url('storeData/create') }}"> Input Store Data</a>
             </div>
 
         </div>
@@ -16,26 +16,19 @@
 
     <table class="table-bordered table">
         <tr>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Email</th>
+            <th>Owner Name</th>
+            <th>Store Name</th>
             <th>Address</th>
-            <th>Postal Code</th>
 
             <th>Action</th>
         </tr>
-        @foreach($owners as $value)
+        @foreach($stores as $value)
         <tr>
             <td>{{$value->name}}</td>
-            <td>{{$value->phone}}</td>
-            <td>{{$value->email}}</td>
+            <td>{{$value->storeName}}</td>
             <td>{{$value->address}}</td>
-            <td>{{$value->postal_code}}</td>
-            <td>
-                <form action="{{ route('ownerData.destroy',$value->id) }}" method="POST">
-                <a class="btn btn-info" href="{{ route('ownerData.show',$value->id) }}">Show</a>
-                <a class="btn btn-primary" href="{{ route('ownerData.edit',$value->id) }}">Edit</a>
-            
+            <td style="width: 30%;">
+                <form action="{{ route('storeData.destroy',$value->id) }}" method="POST">            
                 @csrf
                 @method("DELETE")
                 <input type="hidden" name="_method" value="DELETE">

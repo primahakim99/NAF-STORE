@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Models\User;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\Hash;
 
 class OwnerController extends Controller
 {
@@ -49,7 +50,7 @@ class OwnerController extends Controller
         $model->name = $request->name;
         $model->phone = $request->phone;
         $model->email = $request->email;
-        $model->password = $request->phone;
+        $model->password = Hash::make($request['phone']);
         $model->address = $request->address;
         $model->postal_code = $request->postal_code;
         $model->role_as = $request->role_as;

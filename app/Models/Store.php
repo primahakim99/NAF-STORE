@@ -17,9 +17,15 @@ class Store extends Model
         'user_id',
         'storeName',
         'address',
+        'description',
+        'img'
     ];
 
     public function owner(){
         return $this->hasOne(User::class);
+    }
+
+    public function product(){
+        return $this->hasMany(product::class);
     }
 }
