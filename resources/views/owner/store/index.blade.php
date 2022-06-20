@@ -30,15 +30,16 @@
                 <td> {{ $str->description }} </td>
             </tr>
             <tr>
-                <th>Description:</th>
+                <th>Image:</th>
                 <td><img class="img-fluid img-responsive"
                 src="{{ asset('storage/'.$str->img) }}" style="height: 300px;"></td>
             </tr>
         </table>
-        @endforeach
+        
         <div class="col-md-12 text-right">
             <a href="/storeOwner/{{ $str->id }}/edit" class="btn btn-warning mb-3 text-right">Edit Data</a>
         </div>
+        @endforeach
     </div>
 </div>
 @endsection

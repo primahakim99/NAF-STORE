@@ -1,12 +1,12 @@
 <?php
 
+use App\Models\product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\StoreController;
-use App\Models\product;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +18,10 @@ use App\Models\product;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\OwnerController;
-
+use App\Http\Controllers\StoresController;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/shop', [WelcomeController::class, 'shop'])->name('shop');
@@ -52,6 +53,7 @@ Route::middleware(['auth', 'AdminAccess'])->group(function () {
     // Route::get('/customerData', [CustomerController::class, 'index'])->name('customerData');
     Route::resource('ownerData',OwnerController::class);
     Route::resource('customerData',CustomerController::class);
+    Route::resource('storeData',StoresController::class);
     Route::get('/transaction', [WelcomeController::class, 'transaction'])->name('transaction');
 });
 
