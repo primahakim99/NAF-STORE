@@ -2,16 +2,18 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\CheckoutController;
 
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/shop', [WelcomeController::class, 'shop'])->name('shop');
 Route::get('/wishlist', [WelcomeController::class, 'wishlist'])->name('wishlist');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
-Route::get('/checkout', [WelcomeController::class, 'checkout'])->name('checkout');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
 Route::get('/sign-in', [WelcomeController::class, 'SignIn'])->name('auth.sign-in');
 Route::get('/sign-up', [WelcomeController::class, 'SignUp'])->name('auth.sign-up');
@@ -40,8 +42,16 @@ Route::middleware(['auth', 'AdminAccess'])->group(function () {
 });
 
 
+Route::middleware(['auth', 'UserAccess'])->group(function () {
+
+
+});
+
 Route::post('add_to_cart', [CartController::class, 'store']);//add-to-cart
-Route::put('update_qty', [CartController::class, 'update']);//add-to-cart
+Route::post('checkout', [CheckoutController::class, 'checkout']);//checkout
+
+// Route::get('update_qty_-', [CartController::class, 'update_min']);
+// Route::get('update_qty_+', [CartController::class, 'update_plus']);
 
 
 

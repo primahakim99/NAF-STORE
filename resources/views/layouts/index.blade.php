@@ -3,6 +3,7 @@
 <!-- Basic -->
 
 <head>
+    @livewireStyles
     @include('layouts.partials.head')
 </head>
 
@@ -45,6 +46,7 @@
     <script src="Assets/js/form-validator.min.js"></script>
     <script src="Assets/js/contact-form-script.js"></script>
     <script src="Assets/js/custom.js"></script>
+    @livewireScripts
 </body>
 
 </html>

@@ -53,23 +53,7 @@ class WelcomeController extends Controller
             ]);
         }
     }
-    public function cart()
-    {
-
-    }
-    public function checkout()
-    {
-        if (Auth::check()) {
-            return view('Checkout', [
-                "title" => "Checkout"
-            ]);
-        } else {
-            return view('Checkout', [
-                "title" => "Checkout",
-                'errors' => 'You need to login first. :)'
-            ]);
-        }
-    }
+    
 
 //admin side
     public function ownerData()

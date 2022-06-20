@@ -39,9 +39,9 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @php $total = 0; @endphp
                                 @foreach ($carts as $cart)
                                 <tr>
-
                                     <td class="thumbnail-img">
                                         <a href="#">
                                             <img class="img-fluid" src="{{$cart->image}}" alt="" />
@@ -56,24 +56,45 @@
                                         <p>Rp {{$cart->price}}</p>
                                     </td>
                                     <td class="quantity-box">
-                                        <input type="number" size="4" value="{{$cart->product_qty}}" min="0" step="1" class="c-input-text qty text" name="qty">
+                                        <input type="number" size="4" value="{{$cart->product_qty}}" min="0" step="1" class="c-input-text qty text" name="qty" id="qty">
 
+                                        {{-- <div class="input-grouptext-center mb-3" style="width: 50px">
+                                            <form action="/update_qty_-" method="PUT">
+                                                @csrf
+                                                <input type="hidden" name="cart_id" value="{{$cart->id}}">
+                                                <button class="input-group-text decrement-btn" name="decrement" id="decrement">-</button>
+                                            </form>
+
+                                            <input type="text" name="qty" class="form-control qty-input text-center" value="{{$cart->product_qty}}">
+
+                                            <form action="/update_qty_+" method="PUT">
+                                                @csrf
+                                                <input type="hidden" name="cart_id" value="{{$cart->id}}">
+                                                <input type="hidden" name="cart_qty" value="{{$cart->product_qty +1}}">
+                                                <button class="input-group-text increment-btn" name="increment" id="increment">+</button>
+                                            </form>
+                                        </div> --}}
+
+                                        {{-- <button class="btn btn-primary" wire:click.prevent="decrement('{{$cart->id}}')" >-</button>
+                                        <input type="text" name="qty" class="form-control qty-input text-center" value="{{$cart->product_qty}}">
+                                        <button class="btn btn-primary" wire:click.prevent="increment('{{$cart->id}}')" >+</button> --}}
                                     </td>
                                     <td class="total-pr">
                                         <p>Rp {{$cart->product_qty*$cart->price}}</p>
                                     </td>
                                     <td class="remove-pr">
                                         <a href="#">
-                                            <i class="fas fa-times"></i>
+                                            <i class="fa fa-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
+                                @php $total += $cart->product_qty*$cart->price; @endphp
                                 @endforeach
                             </tbody>
                         </table>
                         <div class="col-lg-12 col-sm-6">
                             <div class="update-box">
-                                <input type="hidden" name="cart_id" value="{{$cart->id}}">
+
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </div>
@@ -87,7 +108,7 @@
                     <h3>Order summary</h3>
                     <div class="d-flex">
                         <h4>Sub Total</h4>
-                        <div class="ml-auto font-weight-bold">Rp 70.200</div>
+                        <div class="ml-auto font-weight-bold">Rp {{$total}}</div>
                     </div>
                     <div class="d-flex">
                         <h4>Discount</h4>
@@ -95,8 +116,8 @@
                     </div>
                     <hr>
                     <div class="d-flex gr-total">
-                        <h5>Grand Total</h5>
-                        <div class="ml-auto h5">Rp 70.200</div>
+                        <h5>Total</h5>
+                        <div class="ml-auto h5">Rp {{$total-0}}</div>
                     </div>
                     <hr>
                     <div class="col-12 d-flex shopping-box"><a href="checkout.html"

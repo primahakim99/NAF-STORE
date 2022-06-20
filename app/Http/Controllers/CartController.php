@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Livewire\Component;
 
 class CartController extends Controller
 {
@@ -43,6 +44,7 @@ class CartController extends Controller
             }else{
 
                 Cart::create([
+                    'store_id' => $request->input('product_price'),
                     'user_id' => Auth::id(),
                     'product_id' => $request->input('product_id'),
                     'product_qty' => 1,
@@ -54,24 +56,33 @@ class CartController extends Controller
         }
     }
 
-    public function get(Request $request)
-    {
-        $cart = Cart::find('cart_id');
-        $cart->product_qty = $request->input('qty');
-        $cart->save();
-        return redirect('/cart');
-    }
-
-    // public function increment($rowId){
-    //     $cart = Cart::get($rowId);
-    //     $qty = $cart->product_qty + 1;
-    //     Cart::update($rowId, $qty);
+    // public function update_min(Request $request)
+    // {
+    //     $cart = Cart::find('cart_id');
+    //     $cart->product_qty = $cart->product_qty - 1;
+    //     $cart->save();
+    //     return redirect('/cart');
     // }
 
-    // public function decrement($rowId){
-    //     $cart = Cart::get($rowId);
+    // public function update_plus(Request $request)
+    // {
+    //     $cart = Cart::find('cart_id');
+    //     $cart->product_qty = null;
+    //     $cart->product_qty = 'cart_qty';
+    //     $cart->save();
+    //     return redirect('/cart');
+    // }
+
+    // public function increment($id){
+    //     $cart = Cart::get($id);
+    //     $qty = $cart->product_qty + 1;
+    //     Cart::update($id, $qty);
+    // }
+
+    // public function decrement($id){
+    //     $cart = Cart::get($id);
     //     $qty = $cart->product_qty - 1;
-    //     Cart::update($rowId, $qty);
+    //     Cart::update($id, $qty);
     // }
 
 
