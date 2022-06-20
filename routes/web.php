@@ -69,15 +69,12 @@ Route::middleware(['auth', 'UserAccess'])->group(function () {
 });
 
 Route::post('add_to_cart', [CartController::class, 'store']);//add-to-cart
-<<<<<<< HEAD
 Route::post('checkout', [CheckoutController::class, 'checkout']);//checkout
 
 // Route::get('update_qty_-', [CartController::class, 'update_min']);
 // Route::get('update_qty_+', [CartController::class, 'update_plus']);
-=======
 Route::get('/updatecart/{id}/{quantity}', [CartController::class, 'update']);
 Route::get('/deletecart/{id}', [CartController::class, 'destroy']);
->>>>>>> 151c587f37a48f064e14445ff03068de5e93cb46
 
 
 
