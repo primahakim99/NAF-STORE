@@ -15,13 +15,13 @@
     <link rel="apple-touch-icon" href="Assets/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Assets/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="/Assets/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="Assets/css/responsive.css">
+    <link rel="stylesheet" href="/Assets/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="Assets/css/custom.css">
+    <link rel="stylesheet" href="/Assets/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

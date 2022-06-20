@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StoreController;
+use App\Models\product;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +36,15 @@ Route::middleware(['auth', 'OwnerAccess'])->group(function () {
     // Route::get('/owner', [HomeController::class, 'ownerHome'])->name('owner.home');
     Route::get('/owner', [WelcomeController::class, 'indexOwner'])->name('welcomeOwner');
     //owner side
-    Route::get('/productList', [WelcomeController::class, 'product_list'])->name('productList');
-    Route::get('/storeOwner', [WelcomeController::class, 'storeOwner'])->name('storeOwner');
+    // Route::get('/productList', [WelcomeController::class, 'product_list'])->name('productList');
+    Route::resource('/product', ProductController::class);
+    Route::resource('/storeOwner', StoreController::class);
+    Route::get('/bismillah', function(){
+        return view('owner.product.bismillah', [
+                    "title" => "bismillah",
+                    'product' => product::all()
+                ]);
+    });
     Route::get('/orderOwner', [WelcomeController::class, 'orderOwner'])->name('orderOwner');
 });
 

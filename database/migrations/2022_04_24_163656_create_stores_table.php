@@ -19,6 +19,8 @@ class CreateStoresTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('storeName');
             $table->string('address');
+            $table->string('description')->nullable();
+            $table->string('img')->nullable();
             $table->timestamps();
         });
     }

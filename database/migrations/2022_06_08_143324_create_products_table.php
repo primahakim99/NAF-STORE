@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->Integer('weight');
             $table->Integer('price');
             $table->string('image')->nullable();
-            $table->timestamp('added_at');
+            $table->timestamps();
         });
     }
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class StoreController extends Controller
 {
@@ -14,7 +16,11 @@ class StoreController extends Controller
      */
     public function index()
     {
-        //
+        $store = Store::where('user_id', auth()->user()->id)->get();
+        return view('owner.store.index',[
+            "title" => "Store Owner",
+            'store' => $store,
+        ]);
     }
 
     /**
@@ -57,7 +63,11 @@ class StoreController extends Controller
      */
     public function edit(Store $store)
     {
-        //
+        $store = Store::where('user_id', auth()->user()->id)->get();
+        return view('owner.store.edit', [
+            'title' => 'Store Edit',
+            'stores' => $store,
+        ]);
     }
 
     /**
@@ -67,9 +77,29 @@ class StoreController extends Controller
      * @param  \App\Models\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Store $store)
+    public function update(Request $request, Store $store, $id)
     {
-        //
+        $store = Store::find($id);
+        $user = User::find(auth()->user()->id);
+
+        $store->storeName = $request->storeName;
+        $store->address = $request->address;
+        $store->description = $request->description;
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+
+        if ($request->hasFile('img')) {
+            if ($store->img && file_exists(storage_path('app/public/'. $store->img))) {
+                Storage::delete(['public/', $store->img]);
+            }
+            $image_name = $request->file('img')->store('store', 'public');
+            $store->img = $image_name;
+        }
+        $store->save();
+        $user->save();
+        return redirect('/storeOwner')
+                ->with('success', 'Store Update');
     }
 
     /**
