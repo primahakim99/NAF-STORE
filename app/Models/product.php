@@ -36,4 +36,8 @@ class product extends Model
     {
         return 'slug';
     }
+    
+    public function cart() {
+        return $this->belongsTo(Cart::class);
+    }
 }

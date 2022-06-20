@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class WelcomeController extends Controller
 {
@@ -53,16 +55,7 @@ class WelcomeController extends Controller
     }
     public function cart()
     {
-        if (Auth::check()) {
-            return view('Cart', [
-                "title" => "Cart"
-            ]);
-        } else {
-            return view('Cart', [
-                "title" => "Cart",
-                'errors' => 'You need to login first. :)'
-            ]);
-        }
+
     }
     public function checkout()
     {
@@ -117,7 +110,6 @@ class WelcomeController extends Controller
             "title" => "orderOwner"
         ]);
     }
-
 
     public function signIn()
     {

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Http\Request;
+use DB;
 
 class CustomerController extends Controller
 {
@@ -14,7 +15,12 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customers = DB::table('users')->where('role_as', 'user')->get();
+        return view('admin.customerData', compact('customers'),  [
+            "title" => "NAF-STORE-Admin",
+
+        ]);
+
     }
 
     /**
@@ -24,7 +30,11 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        $model = new User;
+        return view(
+            'admin.customerCreate', 
+            compact('model')
+    );
     }
 
     /**
@@ -35,7 +45,16 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new User;
+        $model->name = $request->name;
+        $model->phone = $request->phone;
+        $model->email = $request->email;
+        $model->password = $request->phone;
+        $model->address = $request->address;
+        $model->postal_code = $request->postal_code;
+        $model->save();
+
+        return redirect('customerData');
     }
 
     /**
@@ -44,9 +63,13 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function show(Customer $customer)
+    public function show($id)
     {
-        //
+        $model = User::find($id);
+        return view(
+            'admin.customerDetail', 
+            compact('model')
+        );
     }
 
     /**
@@ -55,9 +78,13 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit($id)
     {
-        //
+        $model = User::find($id);
+        return view(
+            'admin.customerEdit', 
+            compact('model')
+    );
     }
 
     /**
@@ -67,19 +94,37 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        //validate the data
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            // 'password' => 'required',
+            'address' => 'required',
+            'postal_code' => 'required', 
+            ]);
+            //Eloquent function to update the data
+        $model = User::find($id);
+        $model->name = $request->get('name');
+        $model->phone = $request->get('phone');
+        $model->email = $request->get('email');
+        $model->password = $request->get('phone');
+        $model->address = $request->get('address');
+        $model->postal_code = $request->get('postal_code');
+        $model->save();
 
+        return redirect('customerData');
+    }
     /**
-     * Remove the specified resource from storage.
-     *
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
-    {
-        //
+    public function destroy($id)
+    { 
+        User::where('id', $id)->delete();
+        return redirect()->route('customerData.index');
+        
     }
 }

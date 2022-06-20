@@ -57,13 +57,16 @@
                                         <div class="products-single fix">
                                             <div class="box-img-hover">
                                                 <img src="{{$product->image}}" class="img-fluid" alt="Image" style="width: 300px; height:300px">
-                                                <div class="mask-icon">
-                                                    <a class="cart" href="#">Add to Cart</a>
-                                                </div>
+
                                             </div>
                                             <div class="why-text">
                                                 <h4>{{$product->name}}</h4>
                                                 <h5> Rp{{$product->price}}</h5>
+                                                <form action="/add_to_cart" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="product_id" value="{{$product['id']}}">
+                                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -83,10 +86,16 @@
                                         </div>
                                         <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
                                             <div class="why-text full-width">
+                                                <input type="hidden" name="product_id" value={{$product->id}}>
                                                 <h4>{{$product->name}}</h4>
                                                 <h5> Rp{{$product->price}}</h5>
                                                 <p>{{$product->description}}</p>
-                                                <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                <form action="/add_to_cart" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="product_id" value="{{$product['id']}}">
+                                                    <input type="hidden" name="product_price" value="{{$product['price']}}">
+                                                <button type="submit" class="btn btn-primary addToCart">Add to Cart</button>
+                                                </form>
                                             </div>
                                         </div>
                                         @endforeach
