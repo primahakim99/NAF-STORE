@@ -27,6 +27,7 @@ class CreateOrdersTable extends Migration
             $table->string('message')->nullable();
             $table->string('tracking_no')->nullable();
             $table->string('grand_total');
+            $table->string('image_evidence')->nullable();
             $table->timestamps();
         });
     }

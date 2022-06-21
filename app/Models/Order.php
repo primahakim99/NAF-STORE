@@ -22,5 +22,6 @@ class Order extends Model
         'message',
         'tracking_no',
         'grand_total',
+        'image_evidence',
     ];
 }

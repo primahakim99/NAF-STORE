@@ -24,7 +24,7 @@
 @else
 <div class="cart-box-main">
     <div class="container">
-        <form action="{{ url('checkout') }}" method="POST">
+        <form action="{{ url('checkout') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="row">
                 <div class="col-sm-6 col-lg-6 mb-3">
@@ -90,6 +90,10 @@
                             </div>
                             <h3>We accept payments E-wallet via Linkaja, OVO, GOPAY, SHOPEEPAY, <br>while for banks we accept payments via transfer to BNI</h3>
                             <h2>E-wallet : 08516115085<br>BNI : 6650050060</h2>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Upload image evidence of transaction</label>
+                                <input class="form-control" type="file" id="image" name="image">
+                              </div>
                         </form>
                     </div>
                 </div>

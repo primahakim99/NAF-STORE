@@ -49,6 +49,7 @@ class CheckoutController extends Controller
         $order->status = '0';
         $order->message = $request->input('message');
         $order->grand_total = $request->input('grand_total');
+        $order->image_evidence = $request->file('image')->store('image_evidence');
         $order->save();
 
         $cartitems = DB::table('carts')
