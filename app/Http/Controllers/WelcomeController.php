@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cart;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Auth;
@@ -40,22 +41,39 @@ class WelcomeController extends Controller
             "products" => product::all(),
         ]);
     }
-    public function wishlist()
+    public function order()
     {
         if (Auth::check()) {
-            return view('Wishlist', [
-                "title" => "Wishlist"
+            $orders = Order::where('user_id', Auth::id())->get();
+            return view('order', [
+                "title" => "Order",
+                'orders' => $orders
             ]);
         } else {
             return view('Wishlist', [
-                "title" => "Wishlist",
+                "title" => "Order",
+                'errors' => 'You need to login first. :)'
+            ]);
+        }
+    }
+
+    public function updateOrder($id)
+    {
+        if (Auth::check()) {
+            $orders = Order::find($id);
+            $orders->status = '1';
+            $orders->update();
+            return redirect('order');
+        } else {
+            return view('order', [
+                "title" => "Order",
                 'errors' => 'You need to login first. :)'
             ]);
         }
     }
     
 
-//admin side
+    //admin side
     public function ownerData()
     {
         return view('admin.ownerData', [

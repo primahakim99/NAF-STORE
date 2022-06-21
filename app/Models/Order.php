@@ -24,4 +24,8 @@ class Order extends Model
         'grand_total',
         'image_evidence',
     ];
+
+    public function order_items(){
+        return $this->hasMany(OrderItem::class);
+    }
 }

@@ -17,7 +17,7 @@
                 <li class="{{ ($title === "Home") ? 'nav-item active' : 'nav-item'}}"><a class="nav-link" href="/owner">Home</a></li>
                     <li class="{{ ($title === "Product List") ? 'nav-item active' : 'nav-item'}}"><a class="nav-link" href="/product">Product list</a></li>
                     <li class="{{ ($title === "Store Owner") ? 'nav-item active' : 'nav-item'}}"><a class="nav-link" href="/storeOwner">Store</a></li>
-                    <li class="{{ ($title === "orderOwner") ? 'nav-item active' : 'nav-item'}}"><a class="nav-link" href="/orderOwner">Order</a></li>
+                    <li class="{{ ($title === "Order Owner") ? 'nav-item active' : 'nav-item'}}"><a class="nav-link" href="/orderOwner">Order</a></li>
                 </ul>
             </div>
         </div>

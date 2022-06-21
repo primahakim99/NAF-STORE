@@ -4,13 +4,15 @@ use App\Models\product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\OwnerController;
-use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\StoresController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OwnerOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +28,8 @@ use App\Http\Controllers\StoreController;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/shop', [WelcomeController::class, 'shop'])->name('shop');
-Route::get('/wishlist', [WelcomeController::class, 'wishlist'])->name('wishlist');
+Route::get('/order', [WelcomeController::class, 'order'])->name('order');
+Route::put('update-order/{id}',[WelcomeController::class, 'updateOrder']);
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
@@ -43,7 +46,7 @@ Route::middleware(['auth', 'OwnerAccess'])->group(function () {
     // Route::get('/productList', [WelcomeController::class, 'product_list'])->name('productList');
     Route::resource('/product', ProductController::class);
     Route::resource('/storeOwner', StoreController::class);
-    Route::get('/orderOwner', [WelcomeController::class, 'orderOwner'])->name('orderOwner');
+    Route::resource('/orderOwner', OwnerOrderController::class);
 });
 
 Route::middleware(['auth', 'AdminAccess'])->group(function () {
@@ -60,8 +63,6 @@ Route::middleware(['auth', 'AdminAccess'])->group(function () {
 
 
 Route::middleware(['auth', 'UserAccess'])->group(function () {
-
-
 });
 
 Route::post('add_to_cart', [CartController::class, 'store']);//add-to-cart
@@ -70,7 +71,7 @@ Route::post('checkout', [CheckoutController::class, 'checkout']);//checkout
 // Route::get('update_qty_-', [CartController::class, 'update_min']);
 // Route::get('update_qty_+', [CartController::class, 'update_plus']);
 Route::get('/updatecart/{id}/{quantity}', [CartController::class, 'update']);
-Route::get('/deletecart/{id}', [CartController::class, 'destroy']);
+Route::get('/deletecart/{carts}', [CartController::class, 'destroy']);
 
 
 
