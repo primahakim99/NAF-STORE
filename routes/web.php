@@ -66,6 +66,8 @@ Route::middleware(['auth', 'UserAccess'])->group(function () {
 });
 
 Route::post('add_to_cart', [CartController::class, 'store']);//add-to-cart
+Route::post('add_to_wishlist', [ProductController::class, 'addWishlist']);//add-to-Wishllist
+Route::get('/deletewl/{id}', [ProductController::class, 'destroyWishlist']);//delete-wishlist
 Route::post('checkout', [CheckoutController::class, 'checkout']);//checkout
 
 // Route::get('update_qty_-', [CartController::class, 'update_min']);

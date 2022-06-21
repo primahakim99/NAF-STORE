@@ -109,17 +109,13 @@
                                     @php $total = 0; @endphp
                                     @foreach($carts as $cart)
                                     <div class="media mb-2 border-bottom">
-                                        <div class="media-body"> <a href="detail.html">{{$cart->name}}</a>
-                                            <div class="medium">Rp {{$cart->price}}<span class="mx-2">|</span> Qty: {{$cart->product_qty}} <span
-                                                    class="mx-2">|</span> Subtotal: Rp {{$cart->product_qty*$cart->price}}</div>
-                                            <label for="cc-name">Store : {{$cart->storeName}}</label>
-                                            <input type="hidden" name="store_id" value="{{$cart->store_id}}">
-                                            <input type="hidden" name="product_id" value="{{$cart->product_id}}">
-                                            <input type="hidden" name="qty" value="{{$cart->product_qty}}">
-                                            <input type="hidden" name="price" value="{{$cart->price}}">
+                                        <div class="media-body"> <a href="detail.html">{{$cart->product->name}}</a>
+                                            <div class="medium">Rp {{$cart->product->price}}<span class="mx-2">|</span> Qty: {{$cart->product_qty}} <span
+                                                    class="mx-2">|</span> Subtotal: Rp {{$cart->product_qty*$cart->product->price}}</div>
+                                            <label for="cc-name">Store : {{$cart->store->storeName}}</label>
                                         </div>
                                     </div>
-                                    @php $total += $cart->product_qty*$cart->price; @endphp
+                                    @php $total += $cart->product_qty*$cart->product->price; @endphp
                                     @endforeach
                                 </div>
                             </div>

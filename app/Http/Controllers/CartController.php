@@ -14,11 +14,7 @@ use Livewire\Component;
 class CartController extends Controller
 {
     public function index(){
-        $cart = DB::table('carts')
-        ->join('products', 'carts.product_id', '=', 'products.id')
-        ->where('carts.user_id', Auth::id())
-        ->get();
-
+        $cart = Cart::where('user_id', Auth::id())->get();
         if (Auth::check()) {
             return view('Cart', [
                 "title" => "Cart",
@@ -34,6 +30,8 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
+        $product_id = $request->input('product_id');
+        $product_store = $request->input('product_store');
         if(Auth::check()){
             if(
                 Cart::where('product_id',$request->input('product_id'))
@@ -41,34 +39,20 @@ class CartController extends Controller
                 ->exists()
                 )
             {
-                return redirect('/shop');
+                return redirect()->back()->with('message', 'Product Already in the Cart');
             }else{
 
                 Cart::create([
-                    'store_id' => $request->input('product_store'),
+                    'store_id' => $product_store,
                     'user_id' => Auth::id(),
-                    'product_id' => $request->input('product_id'),
+                    'product_id' => $product_id ,
                     'product_qty' => 1,
                 ]);
-                return redirect('/shop');
+                return redirect()->back()->with('message', 'Product Successfully Added to Cart');
             }
         }else{
             return redirect('/sign-in');
         }
-    }
-
-    // public function update_min(Request $request)
-    // {
-    //     $cart = Cart::find('cart_id');
-    //     $cart->product_qty = $cart->product_qty - 1;
-    //     $cart->save();
-    //     return redirect('/cart');
-    public function get(Request $request)
-    {
-        $cart = Cart::find('cart_id');
-        $cart->product_qty = $request->input('qty');
-        $cart->save();
-        return redirect('/cart');
     }
 
     public function update($id, $quantity){
@@ -80,40 +64,4 @@ class CartController extends Controller
         Cart::find($id)->delete();
         return redirect()->back()->with('message', 'Product Successfully Delete from Cart');
     }
-
-    // public function increment($rowId){
-    //     $cart = Cart::get($rowId);
-    //     $qty = $cart->product_qty + 1;
-    //     Cart::update($rowId, $qty);
-    // }
-
-    // public function update_plus(Request $request)
-    // {
-    //     $cart = Cart::find('cart_id');
-    //     $cart->product_qty = null;
-    //     $cart->product_qty = 'cart_qty';
-    //     $cart->save();
-    //     return redirect('/cart');
-    // }
-
-    // public function increment($id){
-    //     $cart = Cart::get($id);
-    //     $qty = $cart->product_qty + 1;
-    //     Cart::update($id, $qty);
-    // }
-
-    // public function decrement($id){
-    //     $cart = Cart::get($id);
-    //     $qty = $cart->product_qty - 1;
-    //     Cart::update($id, $qty);
-    // }
-
-
-
-    // public function destroy($id) {
-    //     $itemcart = Cart::findOrFail($id);
-    //     $itemcart->detail()->delete();//hapus semua item di cart detail
-    //     $itemcart->updatetotal($itemcart, '-'.$itemcart->subtotal);
-    //     return back()->with('success', 'Cart berhasil dikosongkan');
-    // }
 }

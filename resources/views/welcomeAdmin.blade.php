@@ -10,7 +10,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> Admin NAF STORE</strong></h1>
                         <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
-                        <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
+                        
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> Admin NAF STORE</strong></h1>
                         <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
-                        <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
+                        
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> Admin NAF STORE</strong></h1>
                         <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
-                        <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
+                        
                     </div>
                 </div>
             </div>
