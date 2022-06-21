@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cart;
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\cart;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -42,9 +44,11 @@ class WelcomeController extends Controller
     }
     public function wishlist()
     {
+        $wishlist = Wishlist::where('user_id', Auth::id())->get();
         if (Auth::check()) {
             return view('Wishlist', [
-                "title" => "Wishlist"
+                "title" => "Wishlist",
+                'wishlists'=>$wishlist,
             ]);
         } else {
             return view('Wishlist', [
@@ -53,7 +57,7 @@ class WelcomeController extends Controller
             ]);
         }
     }
-    
+
 
 //admin side
     public function ownerData()

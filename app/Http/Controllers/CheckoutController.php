@@ -17,11 +17,7 @@ class CheckoutController extends Controller
 {
     public function index()
     {
-        $cart = DB::table('carts')
-        ->join('products', 'carts.product_id', '=', 'products.id')
-        ->join('stores', 'carts.store_id', '=', 'stores.id')
-        ->where('carts.user_id', Auth::id())
-        ->get();
+        $cart = Cart::where('user_id', Auth::id())->get();
 
         if (Auth::check()) {
             return view('Checkout', [
@@ -52,18 +48,15 @@ class CheckoutController extends Controller
         $order->image_evidence = $request->file('image')->store('image_evidence');
         $order->save();
 
-        $cartitems = DB::table('carts')
-        ->join('products', 'carts.product_id', '=', 'products.id')
-        ->where('user_id', Auth::id())
-        ->get();
+        $cartitems = Cart::where('user_id', Auth::id())->get();
         foreach($cartitems as $item)
         {
             OrderItem::Create([
                 'order_id' => $order->id,
-                'store_id' => $item->store_id,
+                'store_id' => $item->store->store_id,
                 'product_id' => $item->product_id,
                 'qty' => $item->product_qty,
-                'price' => $item->price,
+                'price' => $item->product->price,
             ]);
 
             $product = Product::where('id', $item->product_id)->first();
@@ -82,5 +75,7 @@ class CheckoutController extends Controller
 
         $cartDestroy = Cart::where('user_id', Auth::id())->get();
         Cart::destroy($cartDestroy);
+
+        return redirect('/shop')->with('message', 'Product Already Order');
     }
 }
