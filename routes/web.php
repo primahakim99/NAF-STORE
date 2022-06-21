@@ -28,6 +28,7 @@ use App\Http\Controllers\OwnerOrderController;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/shop', [WelcomeController::class, 'shop'])->name('shop');
+Route::get('/wishlist', [WelcomeController::class, 'wishlist'])->name('wishlist');
 Route::get('/order', [WelcomeController::class, 'order'])->name('order');
 Route::put('update-order/{id}',[WelcomeController::class, 'updateOrder']);
 Route::get('/cart', [CartController::class, 'index'])->name('cart');

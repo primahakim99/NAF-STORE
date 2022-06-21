@@ -6,6 +6,7 @@ use App\Models\cart;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\MessageBag;
@@ -41,6 +42,21 @@ class WelcomeController extends Controller
             "title" => "Shop",
             "products" => product::all(),
         ]);
+    }
+    public function wishlist()
+    {
+        if (Auth::check()) {
+            $wishlist = Wishlist::where('user_id', Auth::id())->get();
+            return view('wishlist', [
+                "title" => "Wishlist",
+                'wishlists' => $wishlist,
+            ]);
+        } else {
+            return view('Wishlist', [
+                "title" => "Wishlist",
+                'errors' => 'You need to login first. :)'
+            ]);
+        }
     }
     public function order()
     {
