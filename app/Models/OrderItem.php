@@ -9,14 +9,10 @@ class OrderItem extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
-        'phone',
-        'email',
-        'address',
-        'province',
-        'country',
-        'status',
-        'message',
-        'tracking_no',
+        'order_id',
+        'store_id',
+        'product_id',
+        'qty',
+        'price',
     ];
 }

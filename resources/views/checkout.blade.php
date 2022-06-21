@@ -34,31 +34,37 @@
                         </div>
                         <form class="needs-validation" novalidate>
                             <div class="row">
-                                <label for="firstName">Name *</label>
-                                <input type="text" class="form-control" id="name" placeholder="" value="{{Auth::user()->name}}">
+                                <label for="name">Name *</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="" value="{{Auth::user()->name}}">
                             </div>
                             <div class="mb-3">
                                 <label for="email">Phone *</label>
-                                <input type="email" class="form-control" id="phone" placeholder="" value="{{Auth::user()->phone}}">
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="" value="{{Auth::user()->phone}}">
                             </div>
                             <div class="mb-3">
                                 <label for="email">Email *</label>
-                                <input type="email" class="form-control" id="email" placeholder="" value="{{Auth::user()->email}}">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="" value="{{Auth::user()->email}}">
                             </div>
                             <div class="mb-3">
                                 <label for="address">Address *</label>
-                                <input type="text" class="form-control" id="address" placeholder="" required value="{{Auth::user()->address}}">
+                                <input type="text" class="form-control" name="address" id="address" placeholder="" value="{{Auth::user()->address}}">
                             </div>
                             <div class="row">
                                 <div class="col-md-4 mb-3">
-                                    <label for="province">Province *</label>
-                                    <input type="text" class="form-control" id="province" placeholder=""  value="{{Auth::user()->province}}">
+                                    <label for="postalCode">Postal Code *</label>
+                                    <input type="text" class="form-control" name="postalCode" id="postalCode" placeholder=""  value="{{Auth::user()->postal_code}}">
                                     <div class="invalid-feedback"> Please enter your shipping Postal Code. </div>
                                     </select>
                                 </div>
-                                <div class="col-md-5 mb-3">
+                                <div class="col-md-4 mb-3">
+                                    <label for="province">Province *</label>
+                                    <input type="text" class="form-control" name="province" id="province" placeholder=""  value="{{Auth::user()->province}}">
+                                    <div class="invalid-feedback"> Please enter your shipping Postal Code. </div>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
                                     <label for="country">Country *</label>
-                                    <input type="text" class="form-control" id="country" placeholder="" value="{{Auth::user()->country}}">
+                                    <input type="text" class="form-control" name="country" id="country" placeholder="" value="{{Auth::user()->country}}">
                                     <div class="invalid-feedback"> Please enter your shipping Country. </div>
                                     </select>
                                 </div>
@@ -73,15 +79,17 @@
                                 <div class="mb-4">
                                     <div class="custom-control custom-radio">
                                         <input id="shippingOption1" name="shipping-option" class="custom-control-input"
-                                            checked="checked" type="radio">
-                                        <label class="custom-control-label" for="shippingOption1">Standard Delivery</label>
-                                        <span class="float-right font-weight-bold">Rp 5.000,00 - Rp 10.000,00</span>
+                                            checked="checked">
+                                        <label>Standard Delivery (JAVA AREA)</label>
+                                        <span class="float-right font-weight-bold">Rp 10.000,00</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="title-left">
                                 <h3>Payment</h3>
                             </div>
+                            <h3>We accept payments E-wallet via Linkaja, OVO, GOPAY, SHOPEEPAY, <br>while for banks we accept payments via transfer to BNI</h3>
+                            <h2>E-wallet : 08516115085<br>BNI : 6650050060</h2>
                         </form>
                     </div>
                 </div>
@@ -100,8 +108,11 @@
                                         <div class="media-body"> <a href="detail.html">{{$cart->name}}</a>
                                             <div class="medium">Rp {{$cart->price}}<span class="mx-2">|</span> Qty: {{$cart->product_qty}} <span
                                                     class="mx-2">|</span> Subtotal: Rp {{$cart->product_qty*$cart->price}}</div>
-                                            <label for="cc-name">Store account number:</label>
-                                            <input type="text" class="form-control" id="cc-name" placeholder="" value="">
+                                            <label for="cc-name">Store : {{$cart->storeName}}</label>
+                                            <input type="hidden" name="store_id" value="{{$cart->store_id}}">
+                                            <input type="hidden" name="product_id" value="{{$cart->product_id}}">
+                                            <input type="hidden" name="qty" value="{{$cart->product_qty}}">
+                                            <input type="hidden" name="price" value="{{$cart->price}}">
                                         </div>
                                     </div>
                                     @php $total += $cart->product_qty*$cart->price; @endphp
@@ -130,19 +141,18 @@
                                 <hr>
                                 <div class="d-flex gr-total">
                                     <h5>Grand Total</h5>
-                                    <div class="ml-auto h5">Rp 70.200</div>
+                                    <div class="ml-auto h5">Rp {{$total+=10000}}</div>
+                                    <input type="hidden" name="grand_total" value="{{$total}}">
                                 </div>
                                 <hr>
                             </div>
                         </div>
                         <div class="col-12 d-flex shopping-box">
-                            <a type="submit" class="ml-auto btn hvr-hover">
+                            <button type="submit" class="ml-auto btn hvr-hover">
                             Place Order
-                            </a>
+                            </button>
                         </div>
                     </div>
-                    <label for="cc-name">This is your delivery receipt number:</label>
-                    <input type="text" class="form-control" id="cc-name" placeholder="" required>
                 </div>
             </div>
         </form>

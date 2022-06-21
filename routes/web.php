@@ -8,9 +8,8 @@ use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CheckoutController;
-
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\StoreController;
 
 /*
@@ -23,10 +22,7 @@ use App\Http\Controllers\StoreController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\StoresController;
+
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/shop', [WelcomeController::class, 'shop'])->name('shop');
