@@ -66,7 +66,6 @@
                                                     @csrf
                                                     <input type="hidden" name="product_id" value="{{$product['id']}}">
                                                     <input type="hidden" name="product_store" value="{{$product['store_id']}}">
-                                                    <input type="hidden" name="product_price" value="{{$product['price']}}">
                                                 <button type="submit" class="btn btn-primary">Add to Cart</button>
                                                 </form>
                                             </div>
@@ -96,7 +95,6 @@
                                                     @csrf
                                                     <input type="hidden" name="product_id" value="{{$product['id']}}">
                                                     <input type="hidden" name="product_store" value="{{$product['store_id']}}">
-                                                    <input type="hidden" name="product_price" value="{{$product['price']}}">
                                                 <button type="submit" class="btn btn-primary addToCart">Add to Cart</button>
                                                 </form>
                                             </div>

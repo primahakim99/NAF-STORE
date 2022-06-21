@@ -15,9 +15,9 @@ class CreateOrderItemsTable extends Migration
     {
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
-            $table->string('order_id');
-            $table->string('store_id');
-            $table->string('product_id');
+            $table->foreignId('order_id');
+            $table->foreignId('store_id');
+            $table->foreignId('product_id');
             $table->string('qty');
             $table->Integer('price');
             $table->timestamps();

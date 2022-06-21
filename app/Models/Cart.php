@@ -21,7 +21,7 @@ class Cart extends Model
     }
 
     public function product() {
-        return $this->hasMany(product::class);
+        return $this->belongsTo(product::class);
     }
 
     // public function updatetotal($itemcart, $subtotal) {
