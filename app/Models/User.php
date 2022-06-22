@@ -54,7 +54,8 @@ class User extends Authenticatable
         return $this->belongsTo(Store::class);
     }
 
-    public function cart(){
-        return $this->hasOne(Cart::class);
+    public function cart()
+    {
+        return $this->hasMany(Cart::class);
     }
 }

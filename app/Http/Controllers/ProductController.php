@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Store;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
@@ -144,5 +147,35 @@ class ProductController extends Controller
         }
         Product::destroy($product->id);
         return redirect('/product')->with('success', 'Product Succesful Delete');
+    }
+
+    public function addWishlist(Request $request)
+    {
+        $product_id = $request->input('product_id');
+        if(Auth::check()){
+            if(
+                Wishlist::where('product_id',$product_id)
+                ->where('user_id',Auth::id())
+                ->exists()
+                )
+            {
+                return redirect()->back()->with('message', 'Product Already in the Wish List');
+            }else{
+
+                Wishlist::create([
+                    'product_id' => $product_id,
+                    'user_id' => Auth::id(),
+                ]);
+                return redirect()->back()->with('message', 'Product Successfully Added to Wish List');
+            }
+        }else{
+            return redirect('/sign-in');
+        }
+    }
+
+    public function destroyWishlist($id){
+        $cart = Wishlist::find($id);
+        $cart->delete();
+        return redirect()->back()->with('message', 'Product Successfully Delete from Wish List');
     }
 }

@@ -21,11 +21,18 @@ class Store extends Model
         'img'
     ];
 
-    public function owner(){
+    public function owner()
+    {
         return $this->hasOne(User::class);
     }
 
-    public function product(){
+    public function product()
+    {
         return $this->hasMany(product::class);
+    }
+
+    public function cart()
+    {
+        return $this->hasMany(Cart::class);
     }
 }

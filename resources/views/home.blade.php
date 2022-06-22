@@ -13,7 +13,9 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
+                    <a href="/shop?category={{ $category->slug }}" class="btn hvr-hover">Chips
                     <img class="img-fluid" src="Assets/images/banner-01.jpg" alt="" />
+                    </a>
                     <a class="btn hvr-hover" href="/shop">Chips</a>
                 </div>
             </div>

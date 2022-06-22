@@ -106,21 +106,23 @@
                                     <h3>Shopping cart</h3>
                                 </div>
                                 <div class="rounded p-2 bg-light">
-                                    @php $total = 0; @endphp
+                                    @php $total = 0; $s1 = 0; $s2 = 0;@endphp
                                     @foreach($carts as $cart)
                                     <div class="media mb-2 border-bottom">
-                                        <div class="media-body"> <a href="detail.html">{{$cart->name}}</a>
-                                            <div class="medium">Rp {{$cart->price}}<span class="mx-2">|</span> Qty: {{$cart->product_qty}} <span
-                                                    class="mx-2">|</span> Subtotal: Rp {{$cart->product_qty*$cart->price}}</div>
-                                            <label for="cc-name">Store : {{$cart->storeName}}</label>
-                                            <input type="hidden" name="store_id" value="{{$cart->store_id}}">
-                                            <input type="hidden" name="product_id" value="{{$cart->product_id}}">
-                                            <input type="hidden" name="qty" value="{{$cart->product_qty}}">
-                                            <input type="hidden" name="price" value="{{$cart->price}}">
+                                        <div class="media-body"> <a href="detail.html">{{$cart->product->name}}</a>
+                                            <div class="medium">Rp {{$cart->product->price}}<span class="mx-2">|</span> Qty: {{$cart->product_qty}} <span
+                                                    class="mx-2">|</span> Subtotal: Rp {{$cart->product_qty*$cart->product->price}}</div>
+                                            <label for="cc-name">Store : {{$cart->product->store->storeName}}</label>
                                         </div>
                                     </div>
-                                    @php $total += $cart->product_qty*$cart->price; @endphp
+                                    @php $total += $cart->product_qty*$cart->product->price; @endphp
+                                    @if ($cart->store_id == 1)
+                                    @php $s1 += 1;@endphp
+                                    @elseif ($cart->store_id == 2)
+                                    @php $s2 += 1;@endphp
+                                    @endif
                                     @endforeach
+
                                 </div>
                             </div>
                         </div>
@@ -139,13 +141,18 @@
                                 </div>
                                 <hr>
                                 <div class="d-flex">
+                                    @if ($s1 == 0 or  $s2 == 0)
+                                    @php $shipping = 10000;@endphp
+                                    @else
+                                    @php $shipping = 20000;@endphp
+                                    @endif
                                     <h4>Shipping Cost</h4>
-                                    <div class="ml-auto font-weight-bold">Rp 10.000</div>
+                                    <div class="ml-auto font-weight-bold">Rp {{$shipping}}</div>
                                 </div>
                                 <hr>
                                 <div class="d-flex gr-total">
                                     <h5>Grand Total</h5>
-                                    <div class="ml-auto h5">Rp {{$total+=10000}}</div>
+                                    <div class="ml-auto h5">Rp {{$total+=$shipping}}</div>
                                     <input type="hidden" name="grand_total" value="{{$total}}">
                                 </div>
                                 <hr>

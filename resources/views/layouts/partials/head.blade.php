@@ -23,6 +23,12 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/Assets/css/custom.css">
 
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>

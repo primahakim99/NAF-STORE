@@ -35,83 +35,48 @@
                                 <th>Product Name</th>
                                 <th>Unit Price </th>
                                 <th>Stock</th>
-                                <th>Add Item</th>
+                                <th>Add to Cart</th>
                                 <th>Remove</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($wishlists as $wl)
                             <tr>
                                 <td class="thumbnail-img">
                                     <a href="#">
-                                        <img class="img-fluid" src="Assets/images/img-pro-01.jpg" alt="" />
+                                        <img class="img-fluid" src="{{$wl->product->image}}" alt="" />
                                     </a>
                                 </td>
                                 <td class="name-pr">
                                     <a href="#">
-                                        Apple Chips
+                                        {{$wl->product->name}}
                                     </a>
                                 </td>
                                 <td class="price-pr">
-                                    <p>Rp 31.500</p>
-                                </td>
+                                    <p>Rp {{$wl->product->price}}</p>
+                                </td>@if ($wl->product->stock > 0)
                                 <td class="quantity-box">In Stock</td>
+                                @else
+                                <td class="quantity-box">Out of  Stock</td>
+                                @endif
+
                                 <td class="add-pr">
-                                    <a class="btn hvr-hover" href="#">Add</a>
+                                    {{-- <a class="btn hvr-hover" href="#">Add</a> --}}
+                                    <form action="/add_to_cart" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{$wl->product['id']}}">
+                                        <input type="hidden" name="product_store" value="{{$wl->product['store_id']}}">
+                                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                    <a href="{{ url('deletewl/'.$wl->id) }}">
+                                    </form>
                                 </td>
                                 <td class="remove-pr">
-                                    <a href="#">
+                                    <a href="{{ url('deletewl/'.$wl->id) }}">
                                         <i class="fas fa-times"></i>
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="Assets/images/img-pro-02.jpg" alt="" />
-                                    </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        Bakpao Sayang
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>Rp 30.000</p>
-                                </td>
-                                <td class="quantity-box">In Stock</td>
-                                <td class="add-pr">
-                                    <a class="btn hvr-hover" href="#">Add</a>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="Assets/images/img-pro-03.jpg" alt="" />
-                                    </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        Bayam Crispy
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>Rp 8.700</p>
-                                </td>
-                                <td class="quantity-box">In Stock</td>
-                                <td class="add-pr">
-                                    <a class="btn hvr-hover" href="#">Add</a>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
