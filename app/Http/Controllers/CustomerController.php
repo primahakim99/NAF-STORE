@@ -111,9 +111,10 @@ class CustomerController extends Controller
         $model->name = $request->get('name');
         $model->phone = $request->get('phone');
         $model->email = $request->get('email');
-        $model->password = $request->get('phone');
+        $model->password =Hash::make($request['phone']); //Hash::make($request['phone']);
         $model->address = $request->get('address');
         $model->postal_code = $request->get('postal_code');
+
         $model->save();
 
         return redirect('customerData');
@@ -127,5 +128,30 @@ class CustomerController extends Controller
         User::where('id', $id)->delete();
         return redirect()->route('customerData.index');
         
+    }
+    public function profile(Request $request)
+    { 
+        //validate the data
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            // 'password' => 'required',
+            'address' => 'required',
+            'postal_code' => 'required', 
+            ]);
+            //Eloquent function to update the data
+        auth()->user()->update([
+            'name'=> $request->name,
+            'phone'=> $request->phone,
+            'email'=> $request->email,
+            'address'=> $request->address,
+            'postal_code'=> $request->postal_code,
+
+            'province'=> $request->province,
+            'country'=> $request->country,
+        ]);
+       
+        return redirect('customerData');
     }
 }

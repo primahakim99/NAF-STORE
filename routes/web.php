@@ -37,6 +37,9 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
 Route::get('/sign-in', [WelcomeController::class, 'SignIn'])->name('auth.sign-in');
 Route::get('/sign-up', [WelcomeController::class, 'SignUp'])->name('auth.sign-up');
+Route::GET('/user/profile', [WelcomeController::class, 'profile'])->name('userProfile');
+Route::put('/user/profile/update', [CustomerController::class, 'profile'])->name('customerData.profile');
+
 
 Auth::routes();
 

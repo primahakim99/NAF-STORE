@@ -154,7 +154,7 @@ class WelcomeController extends Controller
         ]);
     }
 
-    public function signIn()
+    public function SignIn()
     {
         return view('auth.login', [
             "title" => "Sign In"
@@ -164,6 +164,14 @@ class WelcomeController extends Controller
     {
         return view('auth.register', [
             "title" => "Sign Up"
+        ]);
+    }
+    public function profile()
+    {
+        $model = Auth::user();
+
+        return view('profile',compact('model'), [
+            "title" => "Profile"
         ]);
     }
 }

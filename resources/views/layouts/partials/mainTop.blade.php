@@ -10,6 +10,7 @@
                     @endif
                     @else
                     <h4><a href="{{ route('welcome') }}" class="text-white">{{ Auth::user()->name }}</a></h4>
+                    <a style="color: #ffff" href="{{ route('userProfile') }}">Profile</a>
                     <a style="color: #ffff" id="logout-btn" class="btn btn-sm btn-denger" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -17,6 +18,8 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
+                    
+                    
                     @endguest
                 </div>
             </div>
