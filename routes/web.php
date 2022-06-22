@@ -26,6 +26,7 @@ use App\Http\Controllers\StoreController;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/shop', [WelcomeController::class, 'shop'])->name('shop');
+Route::get('/productadmin', [WelcomeController::class, 'product'])->name('product');
 Route::get('/wishlist', [WelcomeController::class, 'wishlist'])->name('wishlist');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
