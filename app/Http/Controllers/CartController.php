@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -60,8 +61,7 @@ class CartController extends Controller
     }
 
     public function destroy($id){
-        $cart = Cart::find($id);
-        $cart->delete();
+        Cart::find($id)->delete();
         return redirect()->back()->with('message', 'Product Successfully Delete from Cart');
     }
 }

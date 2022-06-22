@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\cart;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Wishlist;
@@ -44,11 +45,11 @@ class WelcomeController extends Controller
     }
     public function wishlist()
     {
-        $wishlist = Wishlist::where('user_id', Auth::id())->get();
         if (Auth::check()) {
-            return view('Wishlist', [
+            $wishlist = Wishlist::where('user_id', Auth::id())->get();
+            return view('wishlist', [
                 "title" => "Wishlist",
-                'wishlists'=>$wishlist,
+                'wishlists' => $wishlist,
             ]);
         } else {
             return view('Wishlist', [
@@ -57,9 +58,39 @@ class WelcomeController extends Controller
             ]);
         }
     }
+    public function order()
+    {
+        if (Auth::check()) {
+            $orders = Order::where('user_id', Auth::id())->get();
+            return view('order', [
+                "title" => "Order",
+                'orders' => $orders
+            ]);
+        } else {
+            return view('Wishlist', [
+                "title" => "Order",
+                'errors' => 'You need to login first. :)'
+            ]);
+        }
+    }
+
+    public function updateOrder($id)
+    {
+        if (Auth::check()) {
+            $orders = Order::find($id);
+            $orders->status = '1';
+            $orders->update();
+            return redirect('order');
+        } else {
+            return view('order', [
+                "title" => "Order",
+                'errors' => 'You need to login first. :)'
+            ]);
+        }
+    }
 
 
-//admin side
+    //admin side
     public function ownerData()
     {
         return view('admin.ownerData', [
