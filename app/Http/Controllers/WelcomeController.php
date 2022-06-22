@@ -44,6 +44,15 @@ class WelcomeController extends Controller
             "products" => product::latest()->filter(request(['category','search']))->get(),
         ]);
     }
+
+    public function product()
+    {
+        return view('productAdmin', [
+            "title" => "Product",
+            "products" => product::all(),
+        ]);
+    }
+
     public function wishlist()
     {
         if (Auth::check()) {
