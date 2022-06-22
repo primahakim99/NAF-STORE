@@ -14,7 +14,12 @@ class Category extends Model
         'image'
     ];
 
-    public function post(){
-        return $this->hasMany(Post::class);
+    public function product(){
+        return $this->hasMany(product::class);
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

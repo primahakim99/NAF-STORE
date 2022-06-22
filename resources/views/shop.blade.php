@@ -5,8 +5,9 @@
     <div class="container">
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            <input type="text" class="form-control" placeholder="Search" name="search">
+            <button type="submit" class="input-group-addon close-search "></button>
+            <span class="input-group-addon close-search "><i class="fa fa-times"></i></span>
         </div>
     </div>
 </div>
@@ -18,12 +19,13 @@
             <div class="col-lg-12">
                 <h2>Shop</h2>
                 <ul class="breadcrumb">
+                <form action="/shop">
                     <div class="input-group">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                            aria-describedby="search-addon" />
-                        <button type="button" class="btn btn-outline-primary "
-                            style="background: #14BFF4">search</button>
+                        <input type="text" class="form-control" placeholder="Search" name="search">
+                        <button type="submit" class="btn btn-outline-primary "
+                            style="background: #14BFF4">Search</button>
                     </div>
+                </form>
                 </ul>
             </div>
         </div>
@@ -60,8 +62,8 @@
                                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                         <div class="products-single fix">
                                             <div class="box-img-hover">
-                                                <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid" alt="Image"
-                                                    style="width: 300px; height:300px">
+                                                <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid"
+                                                    alt="Image" style="width: 300px; height:300px">
                                             </div>
                                             <div class="why-text">
                                                 <h4>{{$product->name}}</h4>
@@ -69,18 +71,22 @@
                                                 <form action="/add_to_cart" method="POST">
                                                     @csrf
                                                     <input type="hidden" name="product_id" value="{{$product['id']}}">
-                                                    <input type="hidden" name="product_store" value="{{$product['store_id']}}">
-                                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                                    <input type="hidden" name="product_store"
+                                                        value="{{$product['store_id']}}">
+                                                    <button type="submit" class="btn btn-primary">Add to Cart</button>
                                                 </form>
                                                 <form action="/add_to_wishlist" method="POST">
                                                     @csrf
                                                     <input type="hidden" name="product_id" value="{{$product['id']}}">
-                                                    <input type="hidden" name="product_store" value="{{$product['store_id']}}">
-                                                <button type="submit" class="btn btn-primary addToCart">Add to Wishlist</button>
+                                                    <input type="hidden" name="product_store"
+                                                        value="{{$product['store_id']}}">
+                                                    <button type="submit" class="btn btn-primary addToCart">Add to
+                                                        Wishlist</button>
                                                 </form>
                                             </div>
                                             <div class="card-footer">
-                                                <small class="text-muted">Store :  {{ $product->store->storeName }} </small>
+                                                <small class="text-muted">Store : {{ $product->store->storeName }}
+                                                </small>
                                             </div>
                                         </div>
                                     </div>
@@ -94,8 +100,8 @@
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
-                                                    <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid" alt="Image"
-                                                        style="width: 300px; height:300px">
+                                                    <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid"
+                                                        alt="Image" style="width: 300px; height:300px">
                                                 </div>
                                             </div>
                                         </div>
@@ -108,17 +114,21 @@
                                                 <form action="/add_to_cart" method="POST">
                                                     @csrf
                                                     <input type="hidden" name="product_id" value="{{$product['id']}}">
-                                                    <input type="hidden" name="product_store" value="{{$product['store_id']}}">
-                                                <button type="submit" class="btn btn-primary addToCart">Add to Cart</button>
+                                                    <input type="hidden" name="product_store"
+                                                        value="{{$product['store_id']}}">
+                                                    <button type="submit" class="btn btn-primary addToCart">Add to
+                                                        Cart</button>
                                                 </form>
                                                 <form action="/add_to_wishlist" method="POST">
                                                     @csrf
                                                     <input type="hidden" name="product_id" value="{{$product['id']}}">
-                                                <button type="submit" class="btn btn-primary addToCart">Add to Wishlist</button>
+                                                    <button type="submit" class="btn btn-primary addToCart">Add to
+                                                        Wishlist</button>
                                                 </form>
                                             </div>
                                             <div class="card-footer">
-                                                <small class="text-muted">Store :  {{ $product->store->storeName }} </small>
+                                                <small class="text-muted">Store : {{ $product->store->storeName }}
+                                                </small>
                                             </div>
                                         </div>
                                         @endforeach

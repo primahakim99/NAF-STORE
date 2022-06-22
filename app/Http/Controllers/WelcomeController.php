@@ -41,7 +41,7 @@ class WelcomeController extends Controller
     {
         return view('Shop', [
             "title" => "Shop",
-            "products" => product::all(),
+            "products" => product::latest()->filter(request(['category','search']))->get(),
         ]);
     }
     public function wishlist()
@@ -116,6 +116,7 @@ class WelcomeController extends Controller
         $order = Order::all();
         $evidence = Evidence_shipping::join('orders', 'Evidence_shipping.order_id', '=', 'orders.id')
                                     ->get();
+                                    
         // $evidences = Evidence_shipping::where('order_id', Order::id())->get();
         return view('admin.transaction', [
             "title" => "transaction",

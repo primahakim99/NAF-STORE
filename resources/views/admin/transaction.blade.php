@@ -31,7 +31,7 @@
                                 <td scope="row">{{ $order->grand_total }}</td>
                                 @if ($order->status == 0)
                                 <td scope="row">Process</td>
-                                <td scope="row"><img src="{{ asset('storage/'.$order->image) }}"></td>
+                                <td scope="row"><img src="{{ asset('storage/'.$order->image_evidence) }}" style="width: 150px; height: 150px;"></td>
                                 @elseif ($order->status == 1)
                                 <td scope="row">Payment Verified</td>
                                 <td scope="row">

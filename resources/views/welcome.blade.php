@@ -55,7 +55,8 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
                     <img class="img-fluid" src="{{ $category->image }}" alt="" />
-                    <a class="btn hvr-hover" href="#">{{ $category->name }}</a>
+                    <a class="btn hvr-hover" href="/shop?category={{ $category->slug }}">{{ $category->name }}</a>
+                    </a>
                 </div>
             </div>
             @endforeach
