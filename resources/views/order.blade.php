@@ -46,13 +46,25 @@
                                 <td scope="row">{{ date('d-m-Y'), strtotime($order->created_at) }}</td>
                                 <td scope="row">{{ $order->tracking_no }}</td>
                                 <td scope="row">{{ $order->grand_total }}</td>
-                                <td scope="row">{{ $order->status == '0' ? 'Process' : 'Completed' }}</td>
+                                @if ($order->status == 0)
+                                <td scope="row">Process</td>
+                                @elseif ($order->status == 1)
+                                <td scope="row">Payment Verified</td>
+                                @elseif ($order->status == 2)
+                                <td scope="row">Shipping</td>
+                                @elseif ($order->status == 3)
+                                <td scope="row">Completed</td>
+                                @else
+                                <td scope="row">Order Reject</td>
+                                @endif
                                 <td>
-                                    <form action=" {{ url('update-order/'.$order->id) }} " method="POST">
+                                    @if ($order->status == 2)
+                                    <form action=" {{url('/update-order/'.$order->id.'/1')}} " method="POST">
                                         @csrf
                                         @method('PUT')
                                         <button type="submit" class="btn btn-primary">Receive Order</button>
                                     </form>
+                                    @endif
                                 </td>
                             </tr>
                         </tbody>

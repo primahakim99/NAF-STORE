@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Evidence_shipping;
 use App\Models\Store;
 use App\Models\product;
 use App\Models\OrderItem;
@@ -46,7 +47,13 @@ class OwnerOrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $order_id = $request->input('order_id');
+        $image_evidence = $request->file('image')->store('image_evidence');
+        Evidence_shipping::Create([
+            'order_id' => $order_id,
+            'image_evidence' => $image_evidence,
+        ]);
+        return redirect('/orderOwner')->with('message', 'Evidence Already send');
     }
 
     /**

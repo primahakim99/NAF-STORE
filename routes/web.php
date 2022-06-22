@@ -30,7 +30,7 @@ Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/shop', [WelcomeController::class, 'shop'])->name('shop');
 Route::get('/wishlist', [WelcomeController::class, 'wishlist'])->name('wishlist');
 Route::get('/order', [WelcomeController::class, 'order'])->name('order');
-Route::put('update-order/{id}',[WelcomeController::class, 'updateOrder']);
+Route::put('update-order/{id}/{status}',[WelcomeController::class, 'updateOrder']);
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
@@ -70,6 +70,7 @@ Route::post('add_to_cart', [CartController::class, 'store']);//add-to-cart
 Route::post('add_to_wishlist', [ProductController::class, 'addWishlist']);//add-to-Wishllist
 Route::get('/deletewl/{id}', [ProductController::class, 'destroyWishlist']);//delete-wishlist
 Route::post('checkout', [CheckoutController::class, 'checkout']);//checkout
+Route::post('evidence_shipping', [OwnerOrderController::class, 'store']);//evidence_shipping
 
 // Route::get('update_qty_-', [CartController::class, 'update_min']);
 // Route::get('update_qty_+', [CartController::class, 'update_plus']);

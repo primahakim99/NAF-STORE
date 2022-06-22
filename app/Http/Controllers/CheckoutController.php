@@ -42,7 +42,7 @@ class CheckoutController extends Controller
         $order->postal_code = $request->input('postalCode');
         $order->province = $request->input('province');
         $order->country = $request->input('country');
-        $order->status = '0';
+        $order->status = 0;
         $order->message = $request->input('message');
         $order->tracking_no = 'NAFStore'.rand(1111,9999);
         $order->grand_total = $request->input('grand_total');

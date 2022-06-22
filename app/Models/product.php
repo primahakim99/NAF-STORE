@@ -32,6 +32,11 @@ class product extends Model
         return $this->belongsTo(Store::class);
     }
 
+    public function cart()
+    {
+        return $this->hasMany(Cart::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

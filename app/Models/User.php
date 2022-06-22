@@ -53,4 +53,9 @@ class User extends Authenticatable
     public function store(){
         return $this->belongsTo(Store::class);
     }
+
+    public function cart()
+    {
+        return $this->hasMany(Cart::class);
+    }
 }

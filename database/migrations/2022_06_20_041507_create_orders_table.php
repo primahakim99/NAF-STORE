@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('postal_code');
             $table->string('province');
             $table->string('country');
-            $table->string('status')->default('0');
+            $table->tinyInteger('status')->default(0);
             $table->string('message')->nullable();
             $table->string('tracking_no')->nullable();
             $table->string('grand_total');

@@ -38,6 +38,19 @@
                     <td><img class="img-fluid img-responsive" src="{{ asset('storage/'.$order->image_evidence) }}"
                             style="height: 300px;"></td>
                 </tr>
+               @if ($order->status == 1)
+                <tr>
+                    <form action="{{ url('evidence_shipping') }}" method="POST" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <th>Upload Shipping Evidence:</th>
+                        <td>
+                            <input type="hidden" name="order_id" value="{{$order['id']}}">
+                            <input class="form-control" type="file" id="image" name="image" required>
+                            <button type="submit" class="btn btn-primary addToCart">Submit</button>
+                        </td>
+                    </form>
+                </tr>
+               @endif
                 @endforeach
             </table>
         </div>

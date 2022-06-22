@@ -35,8 +35,8 @@
                 <form action="{{ route('customerData.destroy',$value->id) }}" method="POST">
                 <a class="btn btn-info" href="{{ route('customerData.show',$value->id) }}">Show</a>
                 <a class="btn btn-primary" href="{{ route('customerData.edit',$value->id) }}">Edit</a>
-            
-                
+
+
                 @csrf
                 @method("DELETE")
                 <input type="hidden" name="_method" value="DELETE">

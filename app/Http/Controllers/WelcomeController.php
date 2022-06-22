@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Wishlist;
+use App\Models\Evidence_shipping;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\MessageBag;
@@ -64,7 +65,7 @@ class WelcomeController extends Controller
             $orders = Order::where('user_id', Auth::id())->get();
             return view('order', [
                 "title" => "Order",
-                'orders' => $orders
+                'orders' => $orders,
             ]);
         } else {
             return view('Wishlist', [
@@ -74,20 +75,25 @@ class WelcomeController extends Controller
         }
     }
 
-    public function updateOrder($id)
-    {
-        if (Auth::check()) {
-            $orders = Order::find($id);
-            $orders->status = '1';
-            $orders->update();
-            return redirect('order');
-        } else {
-            return view('order', [
-                "title" => "Order",
-                'errors' => 'You need to login first. :)'
-            ]);
-        }
+    public function updateOrder($id, $status){
+        $cart = Order::where('id', $id)->increment('status', $status);
+        return redirect()->back();
     }
+
+    // public function updateOrder($id)
+    // {
+    //     if (Auth::check()) {
+    //         $orders = Order::find($id);
+    //         $orders->status = '3';
+    //         $orders->update();
+    //         return redirect('order');
+    //     } else {
+    //         return view('order', [
+    //             "title" => "Order",
+    //             'errors' => 'You need to login first. :)'
+    //         ]);
+    //     }
+    // }
 
 
     //admin side
@@ -97,16 +103,24 @@ class WelcomeController extends Controller
             "title" => "owner_data"
         ]);
     }
+
     public function customerData()
     {
         return view('admin.customerData', [
             "title" => "customer_data"
         ]);
     }
+
     public function transaction()
     {
+        $order = Order::all();
+        $evidence = Evidence_shipping::join('orders', 'Evidence_shipping.order_id', '=', 'orders.id')
+                                    ->get();
+        // $evidences = Evidence_shipping::where('order_id', Order::id())->get();
         return view('admin.transaction', [
-            "title" => "transaction"
+            "title" => "transaction",
+            'orders' => $order,
+            'evidence'=> $evidence,
         ]);
     }
 
