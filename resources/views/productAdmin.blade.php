@@ -16,12 +16,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Shop</h2>
+                <h2>Product List</h2>
                 <ul class="breadcrumb">
-                    <div class="input-group">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                        <button type="button" class="btn btn-outline-primary " style="background: #14BFF4">search</button>
-                      </div>
                 </ul>
             </div>
         </div>
