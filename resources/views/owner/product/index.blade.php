@@ -32,7 +32,7 @@
                     <form action="/product/{{ $product->slug }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
-                        <button class="btn btn-danger">Delete</button>
+                        <button class="btn btn-danger" onclick="alert('Delete Product?')">Delete</button>
                     </form>
                 </td>
             </tr>

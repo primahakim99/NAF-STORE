@@ -29,7 +29,7 @@
             <td>{{$value->name}}</td>
             <td>{{$value->phone}}</td>
             <td>{{$value->email}}</td>
-            <td>{{$value->addres}}</td>
+            <td>{{$value->address}}</td>
             <td>{{$value->postal_code}}</td>
             <td>
                 <form action="{{ route('customerData.destroy',$value->id) }}" method="POST">
