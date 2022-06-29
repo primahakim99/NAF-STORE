@@ -3,7 +3,7 @@
 <!-- Basic -->
 
 <head>
-    @livewireStyles
+    
     @include('layouts.partials.head')
 </head>
 
