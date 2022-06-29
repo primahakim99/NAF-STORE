@@ -51,7 +51,7 @@ class OwnerOrderController extends Controller
         $image_evidence = $request->file('image')->store('image_evidence');
         Evidence_shipping::Create([
             'order_id' => $order_id,
-            'image_evidence' => $image_evidence,
+            'img_evidence' => $image_evidence,
         ]);
         return redirect('/orderOwner')->with('message', 'Evidence Already send');
     }

@@ -16,7 +16,7 @@ class CreateEvidenceShippingTable extends Migration
         Schema::create('evidence_shipping', function (Blueprint $table) {
             $table->id();
             $table->foreignId('order_id');
-            $table->string('image_evidence');
+            $table->string('img_evidence');
             $table->timestamps();
         });
     }

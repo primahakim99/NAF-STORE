@@ -49,7 +49,7 @@ class WelcomeController extends Controller
     {
         return view('productAdmin', [
             "title" => "Product",
-            "products" => product::all(),
+            "products" => product::latest()->filter(request(['category','search']))->get(),
         ]);
     }
 
@@ -124,8 +124,8 @@ class WelcomeController extends Controller
     {
         $order = Order::all();
         $evidence = Evidence_shipping::join('orders', 'Evidence_shipping.order_id', '=', 'orders.id')
-                                    ->get();
-                                    
+                                        ->get();
+                                    // dd($evidence);
         // $evidences = Evidence_shipping::where('order_id', Order::id())->get();
         return view('admin.transaction', [
             "title" => "transaction",

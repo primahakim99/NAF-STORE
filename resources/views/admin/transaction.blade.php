@@ -36,7 +36,7 @@
                                 <td scope="row">Payment Verified</td>
                                 <td scope="row">
                                 @foreach($evidence as $ev)
-                                    <img src="{{ asset('storage/'.$ev->image_evidence) }}">
+                                    <img src="{{ asset('storage/'.$ev->img_evidence) }}" style="width: 150px; height: 150px;">
                                 @endforeach
                                 </td>
                                 @elseif ($order->status == 2)

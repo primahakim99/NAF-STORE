@@ -11,6 +11,6 @@ class Evidence_shipping extends Model
     protected $table = 'evidence_shipping';
     protected $fillable = [
         'order_id',
-        'image_evidence',
+        'img_evidence',
     ];
 }

@@ -19,9 +19,11 @@
                 <h2>Shop</h2>
                 <ul class="breadcrumb">
                     <div class="input-group">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                        <button type="button" class="btn btn-outline-primary " style="background: #14BFF4">search</button>
-                      </div>
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                            aria-describedby="search-addon" />
+                        <button type="button" class="btn btn-outline-primary "
+                            style="background: #14BFF4">search</button>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -40,10 +42,12 @@
                         <div class="col-12">
                             <ul class="nav nav-tabs">
                                 <li>
-                                    <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i> </a>
+                                    <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i
+                                            class="fa fa-th"></i> </a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="#list-view" data-toggle="tab"> <i class="fa fa-list-ul"></i> </a>
+                                    <a class="nav-link" href="#list-view" data-toggle="tab"> <i
+                                            class="fa fa-list-ul"></i> </a>
                                 </li>
                             </ul>
                         </div>
@@ -56,7 +60,8 @@
                                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                         <div class="products-single fix">
                                             <div class="box-img-hover">
-                                                <img src="{{$product->image}}" class="img-fluid" alt="Image" style="width: 300px; height:300px">
+                                                <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid"
+                                                    alt="Image" style="width: 300px; height:300px">
 
                                             </div>
                                             <div class="why-text">
@@ -65,9 +70,11 @@
                                                 <form action="/add_to_cart" method="POST">
                                                     @csrf
                                                     <input type="hidden" name="product_id" value="{{$product['id']}}">
-                                                    <input type="hidden" name="product_store" value="{{$product['store_id']}}">
-                                                    <input type="hidden" name="product_price" value="{{$product['price']}}">
-                                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                                    <input type="hidden" name="product_store"
+                                                        value="{{$product['store_id']}}">
+                                                    <input type="hidden" name="product_price"
+                                                        value="{{$product['price']}}">
+                                                    <button type="submit" class="btn btn-primary">Add to Cart</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -82,7 +89,8 @@
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
-                                                    <img src="{{$product->image}}" class="img-fluid" alt="Image" style="width: 300px; height:300px">
+                                                    <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid"
+                                                        alt="Image" style="width: 300px; height:300px">
                                                 </div>
                                             </div>
                                         </div>
@@ -95,9 +103,12 @@
                                                 <form action="/add_to_cart" method="POST">
                                                     @csrf
                                                     <input type="hidden" name="product_id" value="{{$product['id']}}">
-                                                    <input type="hidden" name="product_store" value="{{$product['store_id']}}">
-                                                    <input type="hidden" name="product_price" value="{{$product['price']}}">
-                                                <button type="submit" class="btn btn-primary addToCart">Add to Cart</button>
+                                                    <input type="hidden" name="product_store"
+                                                        value="{{$product['store_id']}}">
+                                                    <input type="hidden" name="product_price"
+                                                        value="{{$product['price']}}">
+                                                    <button type="submit" class="btn btn-primary addToCart">Add to
+                                                        Cart</button>
                                                 </form>
                                             </div>
                                         </div>
