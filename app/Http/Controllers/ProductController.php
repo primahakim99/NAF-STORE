@@ -64,7 +64,7 @@ class ProductController extends Controller
         ]);
 
         if ($request->file('image')) {
-            $validateData['image'] = $request->file('image')->store('products');
+            $validateData['image'] = $request->file('image')->store('products','public');
         }
 
         Product::create($validateData);

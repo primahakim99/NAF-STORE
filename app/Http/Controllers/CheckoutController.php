@@ -46,7 +46,7 @@ class CheckoutController extends Controller
         $order->message = $request->input('message');
         $order->tracking_no = 'NAFStore'.rand(1111,9999);
         $order->grand_total = $request->input('grand_total');
-        $order->image_evidence = $request->file('image')->store('image_evidence');
+        $order->image_evidence = $request->file('image')->store('image_evidence','public');
         $order->save();
 
         $cartitems = Cart::where('user_id', Auth::id())->get();

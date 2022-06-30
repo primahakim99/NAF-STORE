@@ -48,7 +48,7 @@ class OwnerOrderController extends Controller
     public function store(Request $request)
     {
         $order_id = $request->input('order_id');
-        $image_evidence = $request->file('image')->store('image_evidence');
+        $image_evidence = $request->file('image')->store('image_evidence','public');
         Evidence_shipping::Create([
             'order_id' => $order_id,
             'img_evidence' => $image_evidence,
